@@ -1,0 +1,7 @@
+   Build using "/opt/AMD/Vitis_HLS/2024.1/vcxx/libexec//clang++"
+   Compiling apatb_tensor_slice_test.cpp
+   Compiling tensor_slice_test.cpp_pre.cpp.tb.cpp
+   Compiling tensor_slice_test_tb.cpp_pre.cpp.tb.cpp
+   Compiling tensor_slice_wrapper.cpp_pre.cpp.tb.cpp
+   Compiling apatb_tensor_slice_test_ir.ll
+   Generating cosim.tv.exe

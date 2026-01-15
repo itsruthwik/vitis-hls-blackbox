@@ -1,0 +1,9 @@
+--- !Passed
+Pass:            reflow-lower-blackbox
+Name:            BlackBox
+Function:        _Z20tensor_slice_wrapper7ap_uintILi64EES0_RS_ILi128EE
+Args:            
+  - String:          'Function '''
+  - Function:        'tensor_slice_wrapper(ap_uint<64>, ap_uint<64>, ap_uint<128>&)'
+  - String:          ''' is recognized as RTL Module.'
+...

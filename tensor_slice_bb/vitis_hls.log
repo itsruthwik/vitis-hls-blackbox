@@ -1,0 +1,58 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /packages/apps/fpga/Vitis_HLS/2022.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/packages/apps/fpga/Vitis_HLS/2022.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'jchoudh3' on host 'sfpga01a' (Linux_x86_64 version 4.18.0-477.10.1.el8_8.x86_64) on Fri Jan 02 12:36:49 MST 2026
+INFO: [HLS 200-10] In directory '/scratch/jchoudh3/vitis-blackbox/vitis-hls-blackbox/tensor_slice_bb'
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset proj_tensor_slice_test 
+INFO: [HLS 200-10] Opening and resetting project '/scratch/jchoudh3/vitis-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test'.
+WARNING: [HLS 200-40] No /scratch/jchoudh3/vitis-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/solution1.aps file found.
+INFO: [HLS 200-1510] Running: add_files tensor_slice_test.cpp 
+INFO: [HLS 200-10] Adding design file 'tensor_slice_test.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tensor_slice_test_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'tensor_slice_test_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb result.golden.dat 
+INFO: [HLS 200-10] Adding test bench file 'result.golden.dat' to the project
+INFO: [HLS 200-1510] Running: add_files -blackbox tensor_slice_wrapper.json 
+INFO: [HLS 200-10] Adding black box file 'tensor_slice_wrapper.json' to the project
+INFO: [HLS 200-1510] Running: add_files tensor_slice_wrapper.cpp -blackbox 
+INFO: [HLS 200-10] Adding black box file 'tensor_slice_wrapper.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top tensor_slice_test 
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/scratch/jchoudh3/vitis-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No /scratch/jchoudh3/vitis-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/solution1.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 200MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../tensor_slice_test_tb.cpp in debug mode
+   Compiling ../../../../tensor_slice_wrapper.cpp in debug mode
+   Compiling ../../../../tensor_slice_test.cpp in debug mode
+   Generating csim.exe
+g++: fatal error: -fuse-linker-plugin, but liblto_plugin.so not found
+compilation terminated.
+make: *** [Makefile.rules:393: csim.exe] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 2.31 seconds. CPU system time: 0.41 seconds. Elapsed time: 3.7 seconds; current allocated memory: 0.500 MB.
+4
+    while executing
+"source run_hls.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $arg] "
+
+INFO: [HLS 200-112] Total CPU user time: 5.01 seconds. Total CPU system time: 1.03 seconds. Total elapsed time: 6.7 seconds; peak allocated memory: 454.359 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Fri Jan  2 12:36:55 2026...

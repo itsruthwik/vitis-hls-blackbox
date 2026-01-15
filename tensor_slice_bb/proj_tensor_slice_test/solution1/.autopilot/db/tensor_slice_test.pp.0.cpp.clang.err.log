@@ -1,0 +1,4 @@
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/run_hls.tcl:41:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=tensor_slice_test_XLX_SEP_ PragmaOptions=name=tensor_slice_test_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=tensor_slice_test
+        ^
+1 warning generated.

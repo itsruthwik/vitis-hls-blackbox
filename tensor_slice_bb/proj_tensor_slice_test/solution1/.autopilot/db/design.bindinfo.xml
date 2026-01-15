@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op blackbox" ID="" IMPL="auto" LATENCY="2" OPTYPE="blackbox" PRAGMA="" RTLNAME="grp_tensor_slice_wrapper_fu_44" SOURCE="tensor_slice_test.cpp:24" VARIABLE="_ln24" MODULE="tensor_slice_test" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+</BindInfo>

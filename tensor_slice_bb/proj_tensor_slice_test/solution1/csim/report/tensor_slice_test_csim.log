@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../tensor_slice_test_tb.cpp in debug mode
+   Compiling ../../../../tensor_slice_wrapper.cpp in debug mode
+   Compiling ../../../../tensor_slice_test.cpp in debug mode
+   Generating csim.exe
+Starting tensor_slice_wrapper tests...
+Test 1: a=all_1s, b=all_2s, result=0x020002000200020002000200020002
+Test 2: a=all_0s, b=all_0s, result=0
+Test 3: a=incrementing, b=all_1s, result=0x080007000600050004000300020001
+Test passed !
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

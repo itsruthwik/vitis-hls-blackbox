@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/./sim/autowrap/testbench/tensor_slice_test.cpp_pre.cpp.tb.cpp
