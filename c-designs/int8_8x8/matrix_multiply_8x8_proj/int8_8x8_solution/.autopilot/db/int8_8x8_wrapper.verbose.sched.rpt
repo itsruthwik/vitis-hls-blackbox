@@ -1,0 +1,95 @@
+
+
+================================================================
+== Vitis HLS Report for 'int8_8x8_wrapper'
+================================================================
+* Date:           Wed Jan 28 08:24:52 2026
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        matrix_multiply_8x8_proj
+* Solution:       int8_8x8_solution (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.650 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |       33|       33|  0.165 us|  0.165 us|    1|    1|  yes(flp)|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 0
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 1
+HasImplIP: 1
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 0
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+
+* FSM state operations: 
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5.000ns, clock uncertainty: 1.350ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

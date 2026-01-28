@@ -1,0 +1,51 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'matrix_multiply_32x32'" level="0">
+<item name = "Date">Wed Jan 28 08:26:32 2026
+</item>
+<item name = "Version">2024.1 (Build 5069499 on May 21 2024)</item>
+<item name = "Project">matrix_multiply_32x32_proj</item>
+<item name = "Solution">int8_32x32_solution (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu9p-flga2104-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00 ns, 3.650 ns, 1.35 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1075, 1075, 5.375 us, 5.375 us, 1024, 1024, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="call_ln43_entry_proc_fu_126">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="call_ret_Block_VITIS_LOOP_57_3_proc_fu_133">Block_VITIS_LOOP_57_3_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_Loop_VITIS_LOOP_47_1_proc2_fu_139">Loop_VITIS_LOOP_47_1_proc2, 1035, 1035, 5.175 us, 5.175 us, 1024, 1024, loop auto-rewind stp(delay=0 clock cycles(s))</column>
+<column name="grp_Loop_VITIS_LOOP_57_3_proc_fu_147">Loop_VITIS_LOOP_57_3_proc, 1035, 1035, 5.175 us, 5.175 us, 1024, 1024, loop auto-rewind stp(delay=0 clock cycles(s))</column>
+<column name="grp_int8_32x32_wrapper_wrapper_1_fu_186">int8_32x32_wrapper_wrapper_1, 33, 33, 0.165 us, 0.165 us, 1, 1, dataflow</column>
+<column name="grp_Loop_VITIS_LOOP_70_5_proc3_fu_193">Loop_VITIS_LOOP_70_5_proc3, 1033, 1033, 5.165 us, 5.165 us, 1024, 1024, loop auto-rewind stp(delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

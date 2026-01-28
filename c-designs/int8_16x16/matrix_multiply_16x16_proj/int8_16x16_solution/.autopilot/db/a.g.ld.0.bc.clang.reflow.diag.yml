@@ -1,0 +1,377 @@
+--- !Passed
+Pass:            reflow-lower-blackbox
+Name:            BlackBox
+Function:        _Z18int8_16x16_wrapperRN3hls6streamI7ap_uintILi128EELi0EEES4_RNS0_IS1_ILi256EELi0EEE
+Args:            
+  - String:          'Function '''
+  - Function:        'int8_16x16_wrapper(hls::stream<ap_uint<128>, 0>&, hls::stream<ap_uint<128>, 0>&, hls::stream<ap_uint<256>, 0>&)'
+  - String:          ''' is recognized as RTL Module.'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        maxi
+  - String:          ' variable '''
+  - Name:            C
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=none'
+  - String:          ' mode in '
+  - Bitwidth:        '16'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        maxi
+  - String:          ' variable '''
+  - Name:            B
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=none'
+  - String:          ' mode in '
+  - Bitwidth:        '8'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        maxi
+  - String:          ' variable '''
+  - Name:            A
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=none'
+  - String:          ' mode in '
+  - Bitwidth:        '8'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 47, Column: 31 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        A3seq
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_47_1
+  - String:          ' '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:47:26'
+  - String:          ' '
+  - Function:        'matrix_multiply_16x16(ap_int<8> (*) [16], ap_int<8> (*) [16], ap_int<16> (*) [16])'
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 50, Column: 41 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.7
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 70, Column: 31 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        C4seq
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_70_5
+  - String:          ' '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:70:26'
+  - String:          ' '
+  - Function:        'matrix_multiply_16x16(ap_int<8> (*) [16], ap_int<8> (*) [16], ap_int<16> (*) [16])'
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 73, Column: 25 }
+  - OrigDirection:   write
+  - OrigID:          for.inc58.store.9
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 60, Column: 41 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 60, Column: 41 }
+  - OrigDirection:   read
+  - OrigID:          for.inc32.load.5
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem_b
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_59_4
+  - String:          ' '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:59:30'
+  - String:          ' '
+  - Function:        'matrix_multiply_16x16(ap_int<8> (*) [16], ap_int<8> (*) [16], ap_int<16> (*) [16])'
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 47, Column: 31 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 47, Column: 31 }
+  - OrigDirection:   read
+  - OrigID:          A3seq
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_49_2
+  - String:          ' '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:49:30'
+  - String:          ' '
+  - Function:        'matrix_multiply_16x16(ap_int<8> (*) [16], ap_int<8> (*) [16], ap_int<16> (*) [16])'
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 70, Column: 31 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i16
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 70, Column: 31 }
+  - OrigDirection:   write
+  - OrigID:          C4seq
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_72_6
+  - String:          ' '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:72:30'
+  - String:          ' '
+  - Function:        'matrix_multiply_16x16(ap_int<8> (*) [16], ap_int<8> (*) [16], ap_int<16> (*) [16])'
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_47_1
+  - String:          '> at '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:47:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_57_3
+  - String:          '> at '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:57:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_72_6
+  - String:          '> at '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:72:30'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 59, Column: 30 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_59_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 49, Column: 30 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_49_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_59_4
+  - String:          ''' ('
+  - LoopLoc:         'matrix_multiply_16x16.cpp:59:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          matrix_multiply_16x16
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_49_2
+  - String:          ''' ('
+  - LoopLoc:         'matrix_multiply_16x16.cpp:49:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          matrix_multiply_16x16
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 47, Column: 31 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_a
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_47_1
+  - String:          ' '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:47:26'
+  - String:          ' '
+  - Function:        'matrix_multiply_16x16(ap_int<8> (*) [16], ap_int<8> (*) [16], ap_int<16> (*) [16])'
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 47, Column: 31 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_47_1
+  - String:          '''('
+  - LoopLoc:         'matrix_multiply_16x16.cpp:47:26'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_a
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 70, Column: 31 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_c
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_70_5
+  - String:          ' '
+  - LoopLoc:         'matrix_multiply_16x16.cpp:70:26'
+  - String:          ' '
+  - Function:        'matrix_multiply_16x16(ap_int<8> (*) [16], ap_int<8> (*) [16], ap_int<16> (*) [16])'
+    DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 25, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: matrix_multiply_16x16.cpp, Line: 70, Column: 31 }
+Function:        _Z21matrix_multiply_16x16PA16_6ap_intILi8EES2_PA16_S_ILi16EE
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_70_5
+  - String:          '''('
+  - LoopLoc:         'matrix_multiply_16x16.cpp:70:26'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_c
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

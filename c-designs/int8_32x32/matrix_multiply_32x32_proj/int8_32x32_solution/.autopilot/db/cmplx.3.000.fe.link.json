@@ -1,0 +1,32 @@
+{
+  "0": {
+    "basicblocks": 37,
+    "calls": "1",
+    "file": "matrix_multiply_32x32.cpp",
+    "fileloc": 20,
+    "instructions": 170,
+    "loads": {
+      "L": 1
+    },
+    "name": "matrix_multiply_32x32",
+    "stores": {
+      "T": 1
+    },
+    "total_instructions": 958
+  },
+  "1": {
+    "basicblocks": 67,
+    "calls": "",
+    "file": "int8_32x32_wrapper.cpp",
+    "fileloc": 6,
+    "instructions": 249,
+    "loads": {
+      "L": 5
+    },
+    "name": "int8_32x32_wrapper",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 530
+  }
+}
