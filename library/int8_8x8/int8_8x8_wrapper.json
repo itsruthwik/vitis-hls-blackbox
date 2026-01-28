@@ -1,40 +1,43 @@
 {
-"c_function_name"     : "tensor_slice_wrapper",
-"rtl_top_module_name" : "tensor_slice_wrapper",
+"c_function_name"     : "int8_8x8_wrapper",
+"rtl_top_module_name" : "int8_8x8_wrapper",
 "c_files" : [{
-              "c_file" : "tensor_slice_wrapper.cpp",
+              "c_file" : "int8_8x8_wrapper.cpp",
               "cflag" : ""
             }],
 "rtl_files" : [
-                "tensor_slice_wrapper.v"
+                "int8_8x8_wrapper.v",
+                "tensor_slice_int8.v"
               ],
 "c_parameters" : [{
-                   "c_name" : "a_data",
+                   "c_name" : "a_stream",
                    "c_port_direction" : "in",
                    "rtl_ports" : {
-                                  "data_read_in" : "a_data"
-                                 }
+                                  "FIFO_data_read_in" : "a_tdata",
+                                  "FIFO_read_enable" : "a_tvalid",
+                                  "FIFO_empty_flag" : "a_tready"
+                                 },
+                   "c_global" : true
                   },
                   {
-                   "c_name" : "b_data",
+                   "c_name" : "b_stream",
                    "c_port_direction" : "in",
                    "rtl_ports" : {
-                                  "data_read_in" : "b_data"
-                                 }
+                                  "FIFO_data_read_in" : "b_tdata",
+                                  "FIFO_read_enable" : "b_tvalid",
+                                  "FIFO_empty_flag" : "b_tready"
+                                 },
+                   "c_global" : true
                   },
                   {
-                   "c_name" : "c_data_out",
+                   "c_name" : "c_stream",
                    "c_port_direction" : "out",
                    "rtl_ports" : {
-                                  "data_write_out" : "c_data_out"
-                                 }
-                  },
-                  {
-                   "c_name" : "c_data_available_port",
-                   "c_port_direction" : "out",
-                   "rtl_ports" : {
-                                  "data_write_out" : "c_data_available_port"
-                                 }
+                                  "FIFO_data_write_out" : "c_tdata",
+                                  "FIFO_write_enable" : "c_tvalid",
+                                  "FIFO_full_flag" : "c_tready"
+                                 },
+                   "c_global" : true
                   }],
 "rtl_common_signal" : {
                         "module_clock"                    : "ap_clk",
@@ -47,14 +50,14 @@
                         "ap_ctrl_chain_protocol_continue" : "ap_continue"
                       },
 "rtl_performance" : {
-                     "latency" : "1",
+                     "latency" : "33",
                      "II"      : "1"
                     },
 "rtl_resource_usage" : {
                         "FF"   :   "0",
                         "LUT"  :   "0",
+                        "DSP"  :   "64",
                         "BRAM" :   "0",
-                        "URAM" :   "0",
-                        "DSP"  :   "1"
+                        "URAM" :   "0"
                        }
 }
