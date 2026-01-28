@@ -1,7 +1,0 @@
-Running: xsim.dir/tensor_slice_test/xsimk -simmode gui -wdb tensor_slice_test.wdb -simrunnum 0 -socket 42283
-Design successfully loaded
-Design Loading Memory Usage: 19164 KB (Peak: 19592 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 101868 KB (Peak: 158432 KB)
-Simulation CPU Usage: 0 ms

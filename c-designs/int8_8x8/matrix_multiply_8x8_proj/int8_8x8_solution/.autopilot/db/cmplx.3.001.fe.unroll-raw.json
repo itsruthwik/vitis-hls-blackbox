@@ -1,0 +1,17 @@
+{
+  "0": {
+    "basicblocks": 22,
+    "calls": "",
+    "file": "matrix_multiply_8x8.cpp",
+    "fileloc": 19,
+    "instructions": 87,
+    "loads": {
+      "T": 2
+    },
+    "name": "matrix_multiply_8x8",
+    "stores": {
+      "T": 1
+    },
+    "total_instructions": 95
+  }
+}

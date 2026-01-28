@@ -1,2 +1,0 @@
-tensor_slice_wrapper
-tensor_slice_test

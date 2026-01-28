@@ -1,0 +1,305 @@
+
+
+================================================================
+== Synthesis Summary Report of 'matrix_multiply_32x32'
+================================================================
++ General Information: 
+    * Date:           Wed Jan 28 08:26:32 2026
+    * Version:        2024.1 (Build 5069499 on May 21 2024)
+    * Project:        matrix_multiply_32x32_proj
+    * Solution:       int8_32x32_solution (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu9p-flga2104-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+------------+-------------+------------+-----+
+    |               Modules               | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |            |             |            |     |
+    |               & Loops               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |     DSP    |      FF     |     LUT    | URAM|
+    +-------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+------------+-------------+------------+-----+
+    |+ matrix_multiply_32x32*             |     -|  0.00|     1075|  5.375e+03|         -|     1024|     -|  dataflow|  3 (~0%)|  1024 (14%)|  13648 (~0%)|  14465 (1%)|    -|
+    | + entry_proc                        |     -|  2.24|        0|      0.000|         -|        0|     -|        no|        -|           -|      3 (~0%)|    29 (~0%)|    -|
+    | + Block_VITIS_LOOP_57_3_proc        |     -|  2.50|        0|      0.000|         -|        0|     -|        no|        -|           -|   1986 (~0%)|  2491 (~0%)|    -|
+    | + Loop_VITIS_LOOP_47_1_proc2        |     -|  0.00|     1035|  5.175e+03|         -|     1035|     -|        no|        -|           -|    364 (~0%)|   329 (~0%)|    -|
+    |  o VITIS_LOOP_47_1                  |    II|  3.65|     1033|  5.165e+03|        42|       32|    32|       yes|        -|           -|            -|           -|    -|
+    | + Loop_VITIS_LOOP_57_3_proc         |     -|  0.00|     1035|  5.175e+03|         -|     1035|     -|        no|        -|           -|   2347 (~0%)|  2751 (~0%)|    -|
+    |  o VITIS_LOOP_57_3                  |    II|  3.65|     1033|  5.165e+03|        42|       32|    32|       yes|        -|           -|            -|           -|    -|
+    | + int8_32x32_wrapper_wrapper_1*     |     -|  0.00|       33|    165.000|         -|        1|     -|  dataflow|        -|  1024 (14%)|            -|           -|    -|
+    |  + int8_32x32_wrapper               |     -|  3.65|       33|    165.000|         -|        1|     -|  yes(flp)|        -|  1024 (14%)|            -|           -|    -|
+    | + Loop_VITIS_LOOP_70_5_proc3        |     -|  0.00|     1033|  5.165e+03|         -|     1033|     -|        no|        -|           -|    705 (~0%)|  2418 (~0%)|    -|
+    |  o VITIS_LOOP_70_5_VITIS_LOOP_72_6  |     -|  3.65|     1031|  5.155e+03|         9|        1|  1024|       yes|        -|           -|            -|           -|    -|
+    +-------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+------------+-------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface    | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|              |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem_a | READ_ONLY  | 8 -> 8     | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=1            |
+| m_axi_gmem_b | READ_ONLY  | 8 -> 8     | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=1            |
+| m_axi_gmem_c | WRITE_ONLY | 16 -> 16   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=1            |
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | A_1      | 0x10   | 32    | W      | Data signal of A                 |                                                                      |
+| s_axi_control | A_2      | 0x14   | 32    | W      | Data signal of A                 |                                                                      |
+| s_axi_control | B_1      | 0x1c   | 32    | W      | Data signal of B                 |                                                                      |
+| s_axi_control | B_2      | 0x20   | 32    | W      | Data signal of B                 |                                                                      |
+| s_axi_control | C_1      | 0x28   | 32    | W      | Data signal of C                 |                                                                      |
+| s_axi_control | C_2      | 0x2c   | 32    | W      | Data signal of C                 |                                                                      |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+-------------+
+| Argument | Direction | Datatype    |
++----------+-----------+-------------+
+| A        | in        | ap_int<8>*  |
+| B        | in        | ap_int<8>*  |
+| C        | out       | ap_int<16>* |
++----------+-----------+-------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+-------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                       |
++----------+---------------+-----------+----------+-------------------------------+
+| A        | m_axi_gmem_a  | interface |          | channel=0                     |
+| A        | s_axi_control | register  | offset   | name=A_1 offset=0x10 range=32 |
+| A        | s_axi_control | register  | offset   | name=A_2 offset=0x14 range=32 |
+| B        | m_axi_gmem_b  | interface |          | channel=0                     |
+| B        | s_axi_control | register  | offset   | name=B_1 offset=0x1c range=32 |
+| B        | s_axi_control | register  | offset   | name=B_2 offset=0x20 range=32 |
+| C        | m_axi_gmem_c  | interface |          | channel=0                     |
+| C        | s_axi_control | register  | offset   | name=C_1 offset=0x28 range=32 |
+| C        | s_axi_control | register  | offset   | name=C_2 offset=0x2c range=32 |
++----------+---------------+-----------+----------+-------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+-----------------+---------------------------------+
+| HW Interface | Direction | Length | Width | Loop            | Loop Location                   |
++--------------+-----------+--------+-------+-----------------+---------------------------------+
+| m_axi_gmem_a | read      | 1024   | 8     | VITIS_LOOP_47_1 | matrix_multiply_32x32.cpp:47:26 |
+| m_axi_gmem_c | write     | 1024   | 16    | VITIS_LOOP_70_5 | matrix_multiply_32x32.cpp:70:26 |
++--------------+-----------+--------+-------+-----------------+---------------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+---------------------------------+-----------+--------------+--------+-----------------+---------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location                 | Direction | Burst Status | Length | Loop            | Loop Location                   | Resolution | Problem                                                                                               |
++--------------+----------+---------------------------------+-----------+--------------+--------+-----------------+---------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| m_axi_gmem_a | A        | matrix_multiply_32x32.cpp:50:41 | read      | Widen Fail   |        | VITIS_LOOP_49_2 | matrix_multiply_32x32.cpp:49:30 | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0  |
+| m_axi_gmem_a | A        | matrix_multiply_32x32.cpp:50:41 | read      | Inferred     | 1024   | VITIS_LOOP_47_1 | matrix_multiply_32x32.cpp:47:26 |            |                                                                                                       |
+| m_axi_gmem_b | B        | matrix_multiply_32x32.cpp:60:41 | read      | Fail         |        | VITIS_LOOP_59_4 | matrix_multiply_32x32.cpp:59:30 | 214-230    | Stride is incompatible                                                                                |
+| m_axi_gmem_c | C        | matrix_multiply_32x32.cpp:73:25 | write     | Widen Fail   |        | VITIS_LOOP_72_6 | matrix_multiply_32x32.cpp:72:30 | 214-353    | Could not widen since type i16 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem_c | C        | matrix_multiply_32x32.cpp:73:25 | write     | Inferred     | 1024   | VITIS_LOOP_70_5 | matrix_multiply_32x32.cpp:70:26 |            |                                                                                                       |
++--------------+----------+---------------------------------+-----------+--------------+--------+-----------------+---------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------+------+--------+--------------+--------+-----------+---------+
+| Name                          | DSP  | Pragma | Variable     | Op     | Impl      | Latency |
++-------------------------------+------+--------+--------------+--------+-----------+---------+
+| + matrix_multiply_32x32       | 1024 |        |              |        |           |         |
+|  + Block_VITIS_LOOP_57_3_proc | 0    |        |              |        |           |         |
+|    p_out_0_fu_74_p2           |      |        | p_out_0      | add    | fabric    | 0       |
+|    p_out16_0_fu_80_p2         |      |        | p_out16_0    | add    | fabric    | 0       |
+|    p_out2_0_fu_86_p2          |      |        | p_out2_0     | add    | fabric    | 0       |
+|    p_out3_0_fu_92_p2          |      |        | p_out3_0     | add    | fabric    | 0       |
+|    p_out4_0_fu_98_p2          |      |        | p_out4_0     | add    | fabric    | 0       |
+|    p_out5_0_fu_104_p2         |      |        | p_out5_0     | add    | fabric    | 0       |
+|    p_out6_0_fu_110_p2         |      |        | p_out6_0     | add    | fabric    | 0       |
+|    p_out7_0_fu_116_p2         |      |        | p_out7_0     | add    | fabric    | 0       |
+|    p_out8_0_fu_122_p2         |      |        | p_out8_0     | add    | fabric    | 0       |
+|    p_out9_0_fu_128_p2         |      |        | p_out9_0     | add    | fabric    | 0       |
+|    p_out10_0_fu_134_p2        |      |        | p_out10_0    | add    | fabric    | 0       |
+|    p_out11_0_fu_140_p2        |      |        | p_out11_0    | add    | fabric    | 0       |
+|    p_out12_0_fu_146_p2        |      |        | p_out12_0    | add    | fabric    | 0       |
+|    p_out13_0_fu_152_p2        |      |        | p_out13_0    | add    | fabric    | 0       |
+|    p_out14_0_fu_158_p2        |      |        | p_out14_0    | add    | fabric    | 0       |
+|    p_out1550_0_fu_164_p2      |      |        | p_out1550_0  | add    | fabric    | 0       |
+|    p_out1655_0_fu_170_p2      |      |        | p_out1655_0  | add    | fabric    | 0       |
+|    p_out17_0_fu_176_p2        |      |        | p_out17_0    | add    | fabric    | 0       |
+|    p_out18_0_fu_182_p2        |      |        | p_out18_0    | add    | fabric    | 0       |
+|    p_out19_0_fu_188_p2        |      |        | p_out19_0    | add    | fabric    | 0       |
+|    p_out20_0_fu_194_p2        |      |        | p_out20_0    | add    | fabric    | 0       |
+|    p_out21_0_fu_200_p2        |      |        | p_out21_0    | add    | fabric    | 0       |
+|    p_out22_0_fu_206_p2        |      |        | p_out22_0    | add    | fabric    | 0       |
+|    p_out23_0_fu_212_p2        |      |        | p_out23_0    | add    | fabric    | 0       |
+|    p_out24_0_fu_218_p2        |      |        | p_out24_0    | add    | fabric    | 0       |
+|    p_out25_0_fu_224_p2        |      |        | p_out25_0    | add    | fabric    | 0       |
+|    p_out26_0_fu_230_p2        |      |        | p_out26_0    | add    | fabric    | 0       |
+|    p_out27_0_fu_236_p2        |      |        | p_out27_0    | add    | fabric    | 0       |
+|    p_out28_0_fu_242_p2        |      |        | p_out28_0    | add    | fabric    | 0       |
+|    p_out2996_0_fu_248_p2      |      |        | p_out2996_0  | add    | fabric    | 0       |
+|    p_out30_0_fu_254_p2        |      |        | p_out30_0    | add    | fabric    | 0       |
+|  + Loop_VITIS_LOOP_47_1_proc2 | 0    |        |              |        |           |         |
+|    i_fu_114_p2                |      |        | i            | add    | fabric    | 0       |
+|    icmp_ln47_fu_120_p2        |      |        | icmp_ln47    | seteq  | auto      | 0       |
+|  + Loop_VITIS_LOOP_57_3_proc  | 0    |        |              |        |           |         |
+|    add_ln60_fu_715_p2         |      |        | add_ln60     | add    | fabric    | 0       |
+|    add_ln60_1_fu_727_p2       |      |        | add_ln60_1   | add    | fabric    | 0       |
+|    add_ln60_2_fu_739_p2       |      |        | add_ln60_2   | add    | fabric    | 0       |
+|    add_ln60_3_fu_751_p2       |      |        | add_ln60_3   | add    | fabric    | 0       |
+|    add_ln60_4_fu_763_p2       |      |        | add_ln60_4   | add    | fabric    | 0       |
+|    add_ln60_5_fu_775_p2       |      |        | add_ln60_5   | add    | fabric    | 0       |
+|    add_ln60_6_fu_787_p2       |      |        | add_ln60_6   | add    | fabric    | 0       |
+|    add_ln60_7_fu_799_p2       |      |        | add_ln60_7   | add    | fabric    | 0       |
+|    add_ln60_8_fu_811_p2       |      |        | add_ln60_8   | add    | fabric    | 0       |
+|    add_ln60_9_fu_823_p2       |      |        | add_ln60_9   | add    | fabric    | 0       |
+|    add_ln60_10_fu_835_p2      |      |        | add_ln60_10  | add    | fabric    | 0       |
+|    add_ln60_11_fu_847_p2      |      |        | add_ln60_11  | add    | fabric    | 0       |
+|    add_ln60_12_fu_859_p2      |      |        | add_ln60_12  | add    | fabric    | 0       |
+|    add_ln60_13_fu_871_p2      |      |        | add_ln60_13  | add    | fabric    | 0       |
+|    add_ln60_14_fu_883_p2      |      |        | add_ln60_14  | add    | fabric    | 0       |
+|    add_ln60_15_fu_895_p2      |      |        | add_ln60_15  | add    | fabric    | 0       |
+|    add_ln60_16_fu_907_p2      |      |        | add_ln60_16  | add    | fabric    | 0       |
+|    add_ln60_17_fu_919_p2      |      |        | add_ln60_17  | add    | fabric    | 0       |
+|    add_ln60_18_fu_931_p2      |      |        | add_ln60_18  | add    | fabric    | 0       |
+|    add_ln60_19_fu_943_p2      |      |        | add_ln60_19  | add    | fabric    | 0       |
+|    add_ln60_20_fu_955_p2      |      |        | add_ln60_20  | add    | fabric    | 0       |
+|    add_ln60_21_fu_967_p2      |      |        | add_ln60_21  | add    | fabric    | 0       |
+|    add_ln60_22_fu_979_p2      |      |        | add_ln60_22  | add    | fabric    | 0       |
+|    add_ln60_23_fu_991_p2      |      |        | add_ln60_23  | add    | fabric    | 0       |
+|    add_ln60_24_fu_1003_p2     |      |        | add_ln60_24  | add    | fabric    | 0       |
+|    add_ln60_25_fu_1015_p2     |      |        | add_ln60_25  | add    | fabric    | 0       |
+|    add_ln60_26_fu_1027_p2     |      |        | add_ln60_26  | add    | fabric    | 0       |
+|    add_ln60_27_fu_1039_p2     |      |        | add_ln60_27  | add    | fabric    | 0       |
+|    add_ln60_28_fu_1051_p2     |      |        | add_ln60_28  | add    | fabric    | 0       |
+|    add_ln60_29_fu_1063_p2     |      |        | add_ln60_29  | add    | fabric    | 0       |
+|    add_ln60_30_fu_1075_p2     |      |        | add_ln60_30  | add    | fabric    | 0       |
+|    add_ln60_31_fu_1087_p2     |      |        | add_ln60_31  | add    | fabric    | 0       |
+|    j_fu_1099_p2               |      |        | j            | add    | fabric    | 0       |
+|    icmp_ln57_fu_1105_p2       |      |        | icmp_ln57    | seteq  | auto      | 0       |
+|  + Loop_VITIS_LOOP_70_5_proc3 | 0    |        |              |        |           |         |
+|    select_ln70_fu_166_p3      |      |        | select_ln70  | select | auto_sel  | 0       |
+|    first_iter_0_fu_174_p2     |      |        | first_iter_0 | seteq  | auto      | 0       |
+|    add_ln70_fu_180_p2         |      |        | add_ln70     | add    | fabric    | 0       |
+|    lshr_ln73_fu_268_p2        |      |        | lshr_ln73    | lshr   | auto_pipe | 0       |
+|    j_fu_193_p2                |      |        | j            | add    | fabric    | 0       |
+|    icmp_ln72_fu_199_p2        |      |        | icmp_ln72    | seteq  | auto      | 0       |
+|    icmp_ln70_fu_205_p2        |      |        | icmp_ln70    | seteq  | auto      | 0       |
++-------------------------------+------+--------+--------------+--------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------------+--------------+-------------+------+------+--------+-----------------+------+---------+------------------+
+| Name                    | Usage        | Type        | BRAM | URAM | Pragma | Variable        | Impl | Latency | Bitwidth, Depth, |
+|                         |              |             |      |      |        |                 |      |         | Banks            |
++-------------------------+--------------+-------------+------+------+--------+-----------------+------+---------+------------------+
+| + matrix_multiply_32x32 |              |             | 3    | 0    |        |                 |      |         |                  |
+|   control_s_axi_U       | interface    | s_axilite   |      |      |        |                 |      |         |                  |
+|   gmem_a_m_axi_U        | interface    | m_axi       | 1    |      |        |                 |      |         |                  |
+|   gmem_b_m_axi_U        | interface    | m_axi       | 1    |      |        |                 |      |         |                  |
+|   gmem_c_m_axi_U        | interface    | m_axi       | 1    |      |        |                 |      |         |                  |
+|   C_c_U                 | fifo channel | scalar prop |      |      |        | C_c             | srl  | 0       | 64, 5, 1         |
+|   a_stream_U            | fifo channel | stream      |      |      |        | a_stream        | srl  | 0       | 256, 2, 1        |
+|   p_loc_channel_U       | fifo channel | task level  |      |      |        | p_loc_channel   | srl  | 0       | 64, 2, 1         |
+|   p_loc36_channel_U     | fifo channel | task level  |      |      |        | p_loc36_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc37_channel_U     | fifo channel | task level  |      |      |        | p_loc37_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc38_channel_U     | fifo channel | task level  |      |      |        | p_loc38_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc39_channel_U     | fifo channel | task level  |      |      |        | p_loc39_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc40_channel_U     | fifo channel | task level  |      |      |        | p_loc40_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc41_channel_U     | fifo channel | task level  |      |      |        | p_loc41_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc42_channel_U     | fifo channel | task level  |      |      |        | p_loc42_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc43_channel_U     | fifo channel | task level  |      |      |        | p_loc43_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc44_channel_U     | fifo channel | task level  |      |      |        | p_loc44_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc45_channel_U     | fifo channel | task level  |      |      |        | p_loc45_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc46_channel_U     | fifo channel | task level  |      |      |        | p_loc46_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc47_channel_U     | fifo channel | task level  |      |      |        | p_loc47_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc48_channel_U     | fifo channel | task level  |      |      |        | p_loc48_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc49_channel_U     | fifo channel | task level  |      |      |        | p_loc49_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc50_channel_U     | fifo channel | task level  |      |      |        | p_loc50_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc51_channel_U     | fifo channel | task level  |      |      |        | p_loc51_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc52_channel_U     | fifo channel | task level  |      |      |        | p_loc52_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc53_channel_U     | fifo channel | task level  |      |      |        | p_loc53_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc54_channel_U     | fifo channel | task level  |      |      |        | p_loc54_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc55_channel_U     | fifo channel | task level  |      |      |        | p_loc55_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc56_channel_U     | fifo channel | task level  |      |      |        | p_loc56_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc57_channel_U     | fifo channel | task level  |      |      |        | p_loc57_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc58_channel_U     | fifo channel | task level  |      |      |        | p_loc58_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc59_channel_U     | fifo channel | task level  |      |      |        | p_loc59_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc60_channel_U     | fifo channel | task level  |      |      |        | p_loc60_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc61_channel_U     | fifo channel | task level  |      |      |        | p_loc61_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc62_channel_U     | fifo channel | task level  |      |      |        | p_loc62_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc63_channel_U     | fifo channel | task level  |      |      |        | p_loc63_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc64_channel_U     | fifo channel | task level  |      |      |        | p_loc64_channel | srl  | 0       | 64, 2, 1         |
+|   p_loc65_channel_U     | fifo channel | task level  |      |      |        | p_loc65_channel | srl  | 0       | 64, 2, 1         |
+|   b_stream_U            | fifo channel | stream      |      |      |        | b_stream        | srl  | 0       | 256, 2, 1        |
+|   c_stream_U            | fifo channel | stream      |      |      |        | c_stream        | srl  | 0       | 512, 2, 1        |
++-------------------------+--------------+-------------+------+------+--------+-----------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+---------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options | Location                                              | Messages                                                                                                                                                                           |
++----------+---------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dataflow |         | matrix_multiply_32x32.cpp:43 in matrix_multiply_32x32 | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
++----------+---------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+----------------------------------------------+------------------------------------------------------------------------------------+
+| Type      | Options                                      | Location                                                                           |
++-----------+----------------------------------------------+------------------------------------------------------------------------------------+
+| interface | axis port=a_stream                           | ../../library/int8_32x32/int8_32x32_wrapper.cpp:11 in int8_32x32_wrapper, a_stream |
+| interface | axis port=b_stream                           | ../../library/int8_32x32/int8_32x32_wrapper.cpp:12 in int8_32x32_wrapper, b_stream |
+| interface | axis port=c_stream                           | ../../library/int8_32x32/int8_32x32_wrapper.cpp:13 in int8_32x32_wrapper, c_stream |
+| interface | ap_ctrl_none port=return                     | ../../library/int8_32x32/int8_32x32_wrapper.cpp:14 in int8_32x32_wrapper, return   |
+| unroll    |                                              | ../../library/int8_32x32/int8_32x32_wrapper.cpp:20 in int8_32x32_wrapper           |
+| unroll    |                                              | ../../library/int8_32x32/int8_32x32_wrapper.cpp:28 in int8_32x32_wrapper           |
+| unroll    |                                              | ../../library/int8_32x32/int8_32x32_wrapper.cpp:64 in int8_32x32_wrapper           |
+| interface | mode=m_axi port=A offset=slave bundle=gmem_a | matrix_multiply_32x32.cpp:28 in matrix_multiply_32x32, A                           |
+| interface | mode=m_axi port=B offset=slave bundle=gmem_b | matrix_multiply_32x32.cpp:29 in matrix_multiply_32x32, B                           |
+| interface | mode=m_axi port=C offset=slave bundle=gmem_c | matrix_multiply_32x32.cpp:30 in matrix_multiply_32x32, C                           |
+| interface | s_axilite port=return                        | matrix_multiply_32x32.cpp:31 in matrix_multiply_32x32, return                      |
+| stream    | variable=a_stream depth=2                    | matrix_multiply_32x32.cpp:38 in matrix_multiply_32x32, a_stream                    |
+| stream    | variable=b_stream depth=2                    | matrix_multiply_32x32.cpp:39 in matrix_multiply_32x32, b_stream                    |
+| stream    | variable=c_stream depth=2                    | matrix_multiply_32x32.cpp:40 in matrix_multiply_32x32, c_stream                    |
++-----------+----------------------------------------------+------------------------------------------------------------------------------------+
+
+

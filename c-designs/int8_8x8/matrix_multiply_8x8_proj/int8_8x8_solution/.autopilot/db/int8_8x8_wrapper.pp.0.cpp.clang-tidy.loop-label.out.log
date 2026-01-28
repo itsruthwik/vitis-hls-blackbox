@@ -1,0 +1,85 @@
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:1311:7: warning: Added loop label VITIS_LOOP_1223_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1223_1: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:1311:7: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:2285:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:2285:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:2299:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:2299:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:2313:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:2313:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:3942:7: warning: Added loop label VITIS_LOOP_1247_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1247_1: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:3942:7: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5863:5: warning: Added loop label VITIS_LOOP_19_1:   [xilinx-label-all-loops]
+    for(int i = 0; i < 8; i++) {
+    ^~~
+    VITIS_LOOP_19_1: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5863:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5871:5: warning: Added loop label VITIS_LOOP_27_2:   [xilinx-label-all-loops]
+    for(int i = 0; i < 8; i++) {
+    ^~~
+    VITIS_LOOP_27_2: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5871:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5882:5: warning: Added loop label VITIS_LOOP_38_3:   [xilinx-label-all-loops]
+    for(int i = 0; i < 8; i++) {
+    ^~~
+    VITIS_LOOP_38_3: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5882:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5883:9: warning: Added loop label VITIS_LOOP_39_4:   [xilinx-label-all-loops]
+        for(int j = 0; j < 8; j++) {
+        ^~~
+        VITIS_LOOP_39_4: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5883:9: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5889:5: warning: Added loop label VITIS_LOOP_45_5:   [xilinx-label-all-loops]
+    for(int i = 0; i < 8; i++) {
+    ^~~
+    VITIS_LOOP_45_5: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5889:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5890:9: warning: Added loop label VITIS_LOOP_46_6:   [xilinx-label-all-loops]
+        for(int j = 0; j < 8; j++) {
+        ^~~
+        VITIS_LOOP_46_6: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5890:9: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5897:5: warning: Added loop label VITIS_LOOP_53_7:   [xilinx-label-all-loops]
+    for(int i = 0; i < 8; i++) {
+    ^~~
+    VITIS_LOOP_53_7: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5897:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5898:9: warning: Added loop label VITIS_LOOP_54_8:   [xilinx-label-all-loops]
+        for(int j = 0; j < 8; j++) {
+        ^~~
+        VITIS_LOOP_54_8: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5898:9: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5899:13: warning: Added loop label VITIS_LOOP_55_9:   [xilinx-label-all-loops]
+            for(int k = 0; k < 8; k++) {
+            ^~~
+            VITIS_LOOP_55_9: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5899:13: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5906:5: warning: Added loop label VITIS_LOOP_62_10:   [xilinx-label-all-loops]
+    for(int i = 0; i < 8; i++) {
+    ^~~
+    VITIS_LOOP_62_10: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5906:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5909:9: warning: Added loop label VITIS_LOOP_65_11:   [xilinx-label-all-loops]
+        for(int j = 0; j < 8; j++) {
+        ^~~
+        VITIS_LOOP_65_11: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5909:9: note: FIX-IT applied suggested code changes
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5912:13: warning: Added loop label VITIS_LOOP_68_12:   [xilinx-label-all-loops]
+            for(int b = 0; b < 16; b++) {
+            ^~~
+            VITIS_LOOP_68_12: 
+/mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_8x8/matrix_multiply_8x8_proj/int8_8x8_solution/.autopilot/db/int8_8x8_wrapper.pp.0.cpp:5912:13: note: FIX-IT applied suggested code changes

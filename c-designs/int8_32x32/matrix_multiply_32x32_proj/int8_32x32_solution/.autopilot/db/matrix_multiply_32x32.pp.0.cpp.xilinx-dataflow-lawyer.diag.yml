@@ -1,0 +1,8 @@
+---
+MainSourceFile:  /mnt/vault0/rsunketa/vitis-hls-blackbox/c-designs/int8_32x32/matrix_multiply_32x32_proj/int8_32x32_solution/.autopilot/db/matrix_multiply_32x32.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-11] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region'
+    FileOffset:      '43:9'
+    FilePath:        matrix_multiply_32x32.cpp
+...
