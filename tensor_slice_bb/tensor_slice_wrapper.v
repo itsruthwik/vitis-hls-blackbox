@@ -79,26 +79,26 @@ module tensor_slice_wrapper(
 
 
 	always @(posedge ap_clk) begin
-    		if (ap_rst) begin
-        		c_data_out <= 128'd0;
-        		c_data_available_port <= 1'b0;
-    		end else if (ap_ce) begin
-        	if (state == BUSY) begin
-            		// Compute result
-			// Element-wise multiply: 8 pairs of 8-bit values -> 8 x 16-bit results
-            		c_data_out[15:0]    <= a_data[7:0]   * b_data[7:0];
-            		c_data_out[31:16]   <= a_data[15:8]  * b_data[15:8];
-            		c_data_out[47:32]   <= a_data[23:16] * b_data[23:16];
-            		c_data_out[63:48]   <= a_data[31:24] * b_data[31:24];
-            		c_data_out[79:64]   <= a_data[39:32] * b_data[39:32];
-            		c_data_out[95:80]   <= a_data[47:40] * b_data[47:40];
-            		c_data_out[111:96]  <= a_data[55:48] * b_data[55:48];
-            		c_data_out[127:112] <= a_data[63:56] * b_data[63:56];
-            		// c_data_out <= {a_data, b_data};
-            		c_data_available_port <= 1'b1;
-        	end else if (state == DONE && ap_continue) begin
-            		c_data_available_port <= 1'b0;
-        	end
+		if (ap_rst) begin
+			c_data_out <= 128'd0;
+			c_data_available_port <= 1'b0;
+		end else if (ap_ce) begin
+			if (state == BUSY) begin
+				// Compute result
+				// Element-wise multiply: 8 pairs of 8-bit values -> 8 x 16-bit results
+				c_data_out[15:0]    <= a_data[7:0]   * b_data[7:0];
+				c_data_out[31:16]   <= a_data[15:8]  * b_data[15:8];
+				c_data_out[47:32]   <= a_data[23:16] * b_data[23:16];
+				c_data_out[63:48]   <= a_data[31:24] * b_data[31:24];
+				c_data_out[79:64]   <= a_data[39:32] * b_data[39:32];
+				c_data_out[95:80]   <= a_data[47:40] * b_data[47:40];
+				c_data_out[111:96]  <= a_data[55:48] * b_data[55:48];
+				c_data_out[127:112] <= a_data[63:56] * b_data[63:56];
+				// c_data_out <= {a_data, b_data};
+				c_data_available_port <= 1'b1;
+			end else if (state == DONE && ap_continue) begin
+				c_data_available_port <= 1'b0;
+			end
 		end
 	end
 
