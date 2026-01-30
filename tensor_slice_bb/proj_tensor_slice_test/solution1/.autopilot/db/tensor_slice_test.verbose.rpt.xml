@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'tensor_slice_test'" level="0">
-<item name = "Date">Thu Jan 15 19:26:03 2026
+<item name = "Date">Fri Jan 30 10:00:12 2026
 </item>
 <item name = "Version">2024.1 (Build 5069499 on May 21 2024)</item>
 <item name = "Project">proj_tensor_slice_test</item>

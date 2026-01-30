@@ -1,0 +1,92 @@
+<profile>
+<RunData>
+  <RUN_TYPE>impl</RUN_TYPE>
+  <VIVADO_VERSION>v.2024.1</VIVADO_VERSION>
+  <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+</RunData>
+<TimingReport>
+  <TargetClockPeriod>5.000</TargetClockPeriod>
+  <AchievedClockPeriod>1.418</AchievedClockPeriod>
+  <CLOCK_NAME>ap_clk</CLOCK_NAME>
+  <CP_FINAL>1.418</CP_FINAL>
+  <CP_ROUTE>1.418</CP_ROUTE>
+  <CP_SYNTH>0.853</CP_SYNTH>
+  <CP_TARGET>5.000</CP_TARGET>
+  <SLACK_FINAL>3.582</SLACK_FINAL>
+  <SLACK_ROUTE>3.582</SLACK_ROUTE>
+  <SLACK_SYNTH>4.147</SLACK_SYNTH>
+  <TIMING_MET>TRUE</TIMING_MET>
+  <TNS_FINAL>0.000</TNS_FINAL>
+  <TNS_ROUTE>0.000</TNS_ROUTE>
+  <TNS_SYNTH>0.000</TNS_SYNTH>
+  <WNS_FINAL>3.582</WNS_FINAL>
+  <WNS_ROUTE>3.582</WNS_ROUTE>
+  <WNS_SYNTH>4.147</WNS_SYNTH>
+</TimingReport>
+<AreaReport>
+  <Resources>
+    <BRAM>0</BRAM>
+    <CLB>14</CLB>
+    <DSP>8</DSP>
+    <FF>136</FF>
+    <LATCH>0</LATCH>
+    <LUT>7</LUT>
+    <SRL>0</SRL>
+    <URAM>0</URAM>
+  </Resources>
+  <AvailableResources>
+    <BRAM>4320</BRAM>
+    <CLB>147780</CLB>
+    <DSP>6840</DSP>
+    <FF>2364480</FF>
+    <LUT>1182240</LUT>
+    <URAM>960</URAM>
+  </AvailableResources>
+</AreaReport>
+<RtlModules>
+  <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="tensor_slice_test" TOP_CELL="bd_0_i/hls_inst/inst">
+    <SubModules count="1">grp_tensor_slice_wrapper_fu_44</SubModules>
+    <Resources DSP="8" FF="136" LUT="7" LogicLUT="7"/>
+    <LocalResources FF="132" LUT="2" LogicLUT="2"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_tensor_slice_wrapper_fu_44" DEPTH="1" FILE_NAME="tensor_slice_test.v" ORIG_REF_NAME="tensor_slice_wrapper">
+    <Resources DSP="8" FF="4" LUT="5" LogicLUT="5"/>
+  </RtlModule>
+</RtlModules>
+<TimingPaths>
+  <TPATH DATAPATH_DELAY="1.177" DATAPATH_LOGIC_DELAY="0.169" DATAPATH_NET_DELAY="1.008" ENDPOINT_PIN="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__3/DSP_OUTPUT_INST/CEP" LOGIC_LEVELS="1" MAX_FANOUT="8" SLACK="3.582" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[2]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[2]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="tensor_slice_wrapper.v" LINE_NUMBER="57"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="tensor_slice_wrapper.v" LINE_NUMBER="86"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__3/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="1.237" DATAPATH_LOGIC_DELAY="0.238" DATAPATH_NET_DELAY="0.999" ENDPOINT_PIN="bd_0_i/hls_inst/inst/c_data_out_fu_28_reg[72]/CE" LOGIC_LEVELS="1" MAX_FANOUT="128" SLACK="3.658" STARTPOINT_PIN="bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out_fu_28[127]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="92"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/c_data_out_fu_28_reg[72]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="93"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="1.237" DATAPATH_LOGIC_DELAY="0.238" DATAPATH_NET_DELAY="0.999" ENDPOINT_PIN="bd_0_i/hls_inst/inst/c_data_out_fu_28_reg[74]/CE" LOGIC_LEVELS="1" MAX_FANOUT="128" SLACK="3.658" STARTPOINT_PIN="bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out_fu_28[127]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="92"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/c_data_out_fu_28_reg[74]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="93"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="1.237" DATAPATH_LOGIC_DELAY="0.238" DATAPATH_NET_DELAY="0.999" ENDPOINT_PIN="bd_0_i/hls_inst/inst/c_data_out_fu_28_reg[76]/CE" LOGIC_LEVELS="1" MAX_FANOUT="128" SLACK="3.658" STARTPOINT_PIN="bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out_fu_28[127]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="92"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/c_data_out_fu_28_reg[76]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="93"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="1.237" DATAPATH_LOGIC_DELAY="0.238" DATAPATH_NET_DELAY="0.999" ENDPOINT_PIN="bd_0_i/hls_inst/inst/c_data_out_fu_28_reg[78]/CE" LOGIC_LEVELS="1" MAX_FANOUT="128" SLACK="3.658" STARTPOINT_PIN="bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out_fu_28[127]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="92"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/c_data_out_fu_28_reg[78]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="93"/>
+  </TPATH>
+</TimingPaths>
+<VivadoReportFiles>
+  <ReportFile TYPE="design_analysis" PATH="verilog/report/tensor_slice_test_design_analysis_routed.rpt"/>
+  <ReportFile TYPE="failfast" PATH="verilog/report/tensor_slice_test_failfast_routed.rpt"/>
+  <ReportFile TYPE="status" PATH="verilog/report/tensor_slice_test_status_routed.rpt"/>
+  <ReportFile TYPE="timing" PATH="verilog/report/tensor_slice_test_timing_routed.rpt"/>
+  <ReportFile TYPE="timing_paths" PATH="verilog/report/tensor_slice_test_timing_paths_routed.rpt"/>
+  <ReportFile TYPE="utilization" PATH="verilog/report/tensor_slice_test_utilization_routed.rpt"/>
+  <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/tensor_slice_test_utilization_hierarchical_routed.rpt"/>
+</VivadoReportFiles>
+</profile>

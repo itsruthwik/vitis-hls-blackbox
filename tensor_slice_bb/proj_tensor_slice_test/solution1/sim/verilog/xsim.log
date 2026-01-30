@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Jan 15 19:26:12 2026
-# Process ID: 2599248
+# Start of session at: Fri Jan 30 10:00:22 2026
+# Process ID: 3166333
 # Current directory: /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/sim/verilog
 # Command line: xsim -mode tcl -source {xsim.dir/tensor_slice_test/xsim_script.tcl}
 # Log file: /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/sim/verilog/xsim.log
@@ -19,7 +19,7 @@
 # Host memory       :134425 MB
 # Swap memory       :8589 MB
 # Total Virtual     :143015 MB
-# Available Virtual :120771 MB
+# Available Virtual :119011 MB
 #-----------------------------------------------------------
 source xsim.dir/tensor_slice_test/xsim_script.tcl
 # xsim {tensor_slice_test} -autoloadwcfg -tclbatch {tensor_slice_test.tcl}
@@ -39,4 +39,4 @@ source tensor_slice_test.tcl
 ////////////////////////////////////////////////////////////////////////////////////
 $finish called at time : 207500 ps : File "/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/sim/verilog/tensor_slice_test.autotb.v" Line 322
 ## quit
-INFO: [Common 17-206] Exiting xsim at Thu Jan 15 19:26:14 2026...
+INFO: [Common 17-206] Exiting xsim at Fri Jan 30 10:00:25 2026...

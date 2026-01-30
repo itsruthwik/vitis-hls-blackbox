@@ -1,0 +1,24 @@
+
+
+Implementation tool: Xilinx Vivado v.2024.1
+Project:             proj_tensor_slice_test
+Solution:            solution1
+Device target:       xcvu9p-flga2104-2-i
+Report date:         Fri Jan 30 10:04:41 UTC 2026
+
+#=== Post-Implementation Resource usage ===
+SLICE:            0
+LUT:              7
+FF:             136
+DSP:              8
+BRAM:             0
+URAM:             0
+LATCH:            0
+SRL:              0
+CLB:             14
+
+#=== Final timing ===
+CP required:                     5.000
+CP achieved post-synthesis:      0.853
+CP achieved post-implementation: 1.418
+Timing met

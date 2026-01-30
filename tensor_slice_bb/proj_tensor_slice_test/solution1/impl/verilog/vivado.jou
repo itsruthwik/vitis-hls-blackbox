@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri Jan 30 10:00:43 2026
+# Process ID: 3166627
+# Current directory: /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/impl/verilog
+# Command line: vivado -mode batch -source run_vivado.tcl
+# Log file: /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/impl/verilog/vivado.log
+# Journal file: /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/impl/verilog/vivado.jou
+# Running On        :en4234856l
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 24.04.3 LTS
+# Processor Detail  :AMD EPYC 9115 16-Core Processor
+# CPU Frequency     :4114.988 MHz
+# CPU Physical cores:32
+# CPU Logical cores :64
+# Host memory       :134425 MB
+# Swap memory       :8589 MB
+# Total Virtual     :143015 MB
+# Available Virtual :119859 MB
+#-----------------------------------------------------------
+source run_vivado.tcl

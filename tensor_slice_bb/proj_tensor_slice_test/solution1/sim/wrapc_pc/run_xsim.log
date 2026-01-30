@@ -39,7 +39,7 @@ Built simulation snapshot tensor_slice_test
   **** SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Thu Jan 15 19:26:12 2026
+  **** Start of session at: Fri Jan 30 10:00:22 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -61,7 +61,7 @@ source tensor_slice_test.tcl
 ////////////////////////////////////////////////////////////////////////////////////
 $finish called at time : 207500 ps : File "/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb/proj_tensor_slice_test/solution1/sim/verilog/tensor_slice_test.autotb.v" Line 322
 ## quit
-INFO: [Common 17-206] Exiting xsim at Thu Jan 15 19:26:14 2026...
+INFO: [Common 17-206] Exiting xsim at Fri Jan 30 10:00:25 2026...
 Starting tensor_slice_wrapper tests...
 Test 1: a=all_1s, b=all_2s, result=0x020002000200020002000200020002
 Test 2: a=all_0s, b=all_0s, result=0

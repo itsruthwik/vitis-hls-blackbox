@@ -1,0 +1,123 @@
+<profile>
+  <RunData>
+    <RUN_TYPE>synth</RUN_TYPE>
+    <VIVADO_VERSION>v.2024.1</VIVADO_VERSION>
+    <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+  </RunData>
+  <TimingReport>
+    <TargetClockPeriod>5.000</TargetClockPeriod>
+    <AchievedClockPeriod>0.853</AchievedClockPeriod>
+    <CLOCK_NAME>ap_clk</CLOCK_NAME>
+    <CP_FINAL>0.853</CP_FINAL>
+    <CP_ROUTE>NA</CP_ROUTE>
+    <CP_SYNTH>0.853</CP_SYNTH>
+    <CP_TARGET>5.000</CP_TARGET>
+    <SLACK_FINAL>4.147</SLACK_FINAL>
+    <SLACK_ROUTE/>
+    <SLACK_SYNTH>4.147</SLACK_SYNTH>
+    <TIMING_MET>TRUE</TIMING_MET>
+    <TNS_FINAL>0.000</TNS_FINAL>
+    <TNS_ROUTE>NA</TNS_ROUTE>
+    <TNS_SYNTH>0.000</TNS_SYNTH>
+    <WNS_FINAL>4.147</WNS_FINAL>
+    <WNS_ROUTE>NA</WNS_ROUTE>
+    <WNS_SYNTH>4.147</WNS_SYNTH>
+  </TimingReport>
+  <AreaReport>
+    <Resources>
+      <BRAM>0</BRAM>
+      <CLB>0</CLB>
+      <DSP>8</DSP>
+      <FF>136</FF>
+      <LATCH>0</LATCH>
+      <LUT>7</LUT>
+      <SRL>0</SRL>
+      <URAM>0</URAM>
+    </Resources>
+    <AvailableResources>
+      <BRAM>4320</BRAM>
+      <CLB>0</CLB>
+      <DSP>6840</DSP>
+      <FF>2364480</FF>
+      <LUT>1182240</LUT>
+      <URAM>960</URAM>
+    </AvailableResources>
+  </AreaReport>
+  <RtlModules>
+    <RtlModule CELL="inst" DEPTH="0" IS_TOP="1" TYPE="function" MODULENAME="tensor_slice_test" DISPNAME="inst" RTLNAME="tensor_slice_test">
+      <SubModules count="1">grp_tensor_slice_wrapper_fu_44</SubModules>
+      <Resources DSP="8" FF="136" LUT="7"/>
+      <LocalResources FF="132" LUT="2"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_tensor_slice_wrapper_fu_44" DEPTH="1" TYPE="resource" MODULENAME="tensor_slice_wrapper" DISPNAME="grp_tensor_slice_wrapper_fu_44" RTLNAME="tensor_slice_wrapper">
+      <Resources DSP="8" FF="4" LUT="5"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op blackbox" DSP="0" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="blackbox" PRAGMA="" RTLNAME="grp_tensor_slice_wrapper_fu_44" SOURCE="tensor_slice_test.cpp:24" STORAGESUBTYPE="" URAM="0" VARIABLE="_ln24" VISIBLE="false"/>
+    </RtlModule>
+  </RtlModules>
+  <TimingPaths>
+    <TPATH DATAPATH_DELAY="0.615" DATAPATH_LOGIC_DELAY="0.240" DATAPATH_NET_DELAY="0.375" ENDPOINT_PIN="grp_tensor_slice_wrapper_fu_44/c_data_out0/DSP_OUTPUT_INST/CEP" LOGIC_LEVELS="1" MAX_FANOUT="8" SLACK="4.147" STARTPOINT_PIN="ap_CS_fsm_reg[0]/C">
+      <CELL NAME="ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="tensor_slice_wrapper.v" LINE_NUMBER="86" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_tensor_slice_wrapper_fu_44</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="0.615" DATAPATH_LOGIC_DELAY="0.240" DATAPATH_NET_DELAY="0.375" ENDPOINT_PIN="grp_tensor_slice_wrapper_fu_44/c_data_out0__0/DSP_OUTPUT_INST/CEP" LOGIC_LEVELS="1" MAX_FANOUT="8" SLACK="4.147" STARTPOINT_PIN="ap_CS_fsm_reg[0]/C">
+      <CELL NAME="ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="tensor_slice_wrapper.v" LINE_NUMBER="86" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0__0/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_tensor_slice_wrapper_fu_44</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="0.615" DATAPATH_LOGIC_DELAY="0.240" DATAPATH_NET_DELAY="0.375" ENDPOINT_PIN="grp_tensor_slice_wrapper_fu_44/c_data_out0__1/DSP_OUTPUT_INST/CEP" LOGIC_LEVELS="1" MAX_FANOUT="8" SLACK="4.147" STARTPOINT_PIN="ap_CS_fsm_reg[0]/C">
+      <CELL NAME="ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="tensor_slice_wrapper.v" LINE_NUMBER="86" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_tensor_slice_wrapper_fu_44</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="0.615" DATAPATH_LOGIC_DELAY="0.240" DATAPATH_NET_DELAY="0.375" ENDPOINT_PIN="grp_tensor_slice_wrapper_fu_44/c_data_out0__2/DSP_OUTPUT_INST/CEP" LOGIC_LEVELS="1" MAX_FANOUT="8" SLACK="4.147" STARTPOINT_PIN="ap_CS_fsm_reg[0]/C">
+      <CELL NAME="ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="tensor_slice_wrapper.v" LINE_NUMBER="86" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_tensor_slice_wrapper_fu_44</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="0.615" DATAPATH_LOGIC_DELAY="0.240" DATAPATH_NET_DELAY="0.375" ENDPOINT_PIN="grp_tensor_slice_wrapper_fu_44/c_data_out0__3/DSP_OUTPUT_INST/CEP" LOGIC_LEVELS="1" MAX_FANOUT="8" SLACK="4.147" STARTPOINT_PIN="ap_CS_fsm_reg[0]/C">
+      <CELL NAME="ap_CS_fsm_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDSE" FILE_NAME="tensor_slice_test.v" LINE_NUMBER="85"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="tensor_slice_wrapper.v" LINE_NUMBER="86" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <CELL NAME="grp_tensor_slice_wrapper_fu_44/c_data_out0__3/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="grp_tensor_slice_wrapper_fu_44" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_tensor_slice_wrapper_fu_44</MODULE_INSTANCES>
+    </TPATH>
+  </TimingPaths>
+  <VivadoReportFiles>
+    <ReportFile TYPE="design_analysis" PATH="verilog/report/tensor_slice_test_design_analysis_synth.rpt"/>
+    <ReportFile TYPE="failfast" PATH="verilog/report/tensor_slice_test_failfast_synth.rpt"/>
+    <ReportFile TYPE="timing" PATH="verilog/report/tensor_slice_test_timing_synth.rpt"/>
+    <ReportFile TYPE="timing_paths" PATH="verilog/report/tensor_slice_test_timing_paths_synth.rpt"/>
+    <ReportFile TYPE="utilization" PATH="verilog/report/tensor_slice_test_utilization_synth.rpt"/>
+    <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/tensor_slice_test_utilization_hierarchical_synth.rpt"/>
+  </VivadoReportFiles>
+  <GeneralInfo NAME="General Information">
+    <item NAME="Date" VALUE="Fri Jan 30 10:04:52 UTC 2026"/>
+    <item NAME="Version" VALUE="2024.1 (Build 5069499 on May 21 2024)"/>
+    <item NAME="Project" VALUE="proj_tensor_slice_test"/>
+    <item NAME="Solution" VALUE="solution1 (Vivado IP Flow Target)"/>
+    <item NAME="Product family" VALUE="virtexuplus"/>
+    <item NAME="Target device" VALUE="xcvu9p-flga2104-2-i"/>
+  </GeneralInfo>
+  <RunOptions NAME="Run Constraints &amp; Options">
+    <General NAME="Design Constraints &amp; Options">
+      <item NAME="RTL Synthesis target clock" VALUE="5 ns"/>
+      <item NAME="C-Synthesis target clock" VALUE="5 ns"/>
+      <item NAME="C-Synthesis uncertainty" VALUE="27%"/>
+      <item NAME="config_export -ip_xdc_file" VALUE=""/>
+      <item NAME="config_export -ip_xdc_ooc_file" VALUE=""/>
+    </General>
+    <Syn NAME="RTL Synthesis Options">
+      <item NAME="config_export -vivado_synth_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_synth_design_args" VALUE="-directive sdx_optimization_effort_high"/>
+    </Syn>
+    <Reporting NAME="Reporting Options">
+      <item NAME="config_export -vivado_report_level" VALUE="2"/>
+      <item NAME="config_export -vivado_max_timing_paths" VALUE="10"/>
+    </Reporting>
+  </RunOptions>
+</profile>
+

@@ -1,0 +1,500 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date              : Fri Jan 30 10:02:31 2026
+| Host              : en4234856l running 64-bit Ubuntu 24.04.3 LTS
+| Command           : report_timing -max_paths 10 -file ./report/tensor_slice_test_timing_paths_synth.rpt
+| Design            : bd_0_wrapper
+| Device            : xcvu9p-flga2104
+| Speed File        : -2  PRODUCTION 1.28 03-30-2022
+| Design State      : Synthesized
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0/DSP_OUTPUT_INST/CEP
+                            (rising edge-triggered cell DSP_OUTPUT clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.615ns  (logic 0.240ns (39.024%)  route 0.375ns (60.976%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.130     0.235    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT5 (Prop_LUT5_I0_O)        0.163     0.398 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1/O
+                         net (fo=8, unplaced)         0.245     0.643    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0/CEP
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0/DSP_OUTPUT_INST/CEP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.043     5.043    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0/CLK
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+                         DSP_OUTPUT (Setup_DSP_OUTPUT_CLK_CEP)
+                                                     -0.218     4.790    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          4.790    
+                         arrival time                          -0.643    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__0/DSP_OUTPUT_INST/CEP
+                            (rising edge-triggered cell DSP_OUTPUT clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.615ns  (logic 0.240ns (39.024%)  route 0.375ns (60.976%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.130     0.235    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT5 (Prop_LUT5_I0_O)        0.163     0.398 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1/O
+                         net (fo=8, unplaced)         0.245     0.643    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__0/CEP
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__0/DSP_OUTPUT_INST/CEP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.043     5.043    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__0/CLK
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__0/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+                         DSP_OUTPUT (Setup_DSP_OUTPUT_CLK_CEP)
+                                                     -0.218     4.790    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__0/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          4.790    
+                         arrival time                          -0.643    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__1/DSP_OUTPUT_INST/CEP
+                            (rising edge-triggered cell DSP_OUTPUT clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.615ns  (logic 0.240ns (39.024%)  route 0.375ns (60.976%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.130     0.235    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT5 (Prop_LUT5_I0_O)        0.163     0.398 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1/O
+                         net (fo=8, unplaced)         0.245     0.643    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__1/CEP
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__1/DSP_OUTPUT_INST/CEP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.043     5.043    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__1/CLK
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__1/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+                         DSP_OUTPUT (Setup_DSP_OUTPUT_CLK_CEP)
+                                                     -0.218     4.790    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__1/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          4.790    
+                         arrival time                          -0.643    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__2/DSP_OUTPUT_INST/CEP
+                            (rising edge-triggered cell DSP_OUTPUT clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.615ns  (logic 0.240ns (39.024%)  route 0.375ns (60.976%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.130     0.235    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT5 (Prop_LUT5_I0_O)        0.163     0.398 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1/O
+                         net (fo=8, unplaced)         0.245     0.643    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__2/CEP
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__2/DSP_OUTPUT_INST/CEP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.043     5.043    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__2/CLK
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__2/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+                         DSP_OUTPUT (Setup_DSP_OUTPUT_CLK_CEP)
+                                                     -0.218     4.790    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__2/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          4.790    
+                         arrival time                          -0.643    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__3/DSP_OUTPUT_INST/CEP
+                            (rising edge-triggered cell DSP_OUTPUT clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.615ns  (logic 0.240ns (39.024%)  route 0.375ns (60.976%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.130     0.235    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT5 (Prop_LUT5_I0_O)        0.163     0.398 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1/O
+                         net (fo=8, unplaced)         0.245     0.643    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__3/CEP
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__3/DSP_OUTPUT_INST/CEP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.043     5.043    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__3/CLK
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__3/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+                         DSP_OUTPUT (Setup_DSP_OUTPUT_CLK_CEP)
+                                                     -0.218     4.790    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__3/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          4.790    
+                         arrival time                          -0.643    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__4/DSP_OUTPUT_INST/CEP
+                            (rising edge-triggered cell DSP_OUTPUT clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.615ns  (logic 0.240ns (39.024%)  route 0.375ns (60.976%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.130     0.235    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT5 (Prop_LUT5_I0_O)        0.163     0.398 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1/O
+                         net (fo=8, unplaced)         0.245     0.643    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__4/CEP
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__4/DSP_OUTPUT_INST/CEP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.043     5.043    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__4/CLK
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__4/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+                         DSP_OUTPUT (Setup_DSP_OUTPUT_CLK_CEP)
+                                                     -0.218     4.790    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__4/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          4.790    
+                         arrival time                          -0.643    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__5/DSP_OUTPUT_INST/CEP
+                            (rising edge-triggered cell DSP_OUTPUT clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.615ns  (logic 0.240ns (39.024%)  route 0.375ns (60.976%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.130     0.235    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT5 (Prop_LUT5_I0_O)        0.163     0.398 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1/O
+                         net (fo=8, unplaced)         0.245     0.643    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__5/CEP
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__5/DSP_OUTPUT_INST/CEP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.043     5.043    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__5/CLK
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__5/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+                         DSP_OUTPUT (Setup_DSP_OUTPUT_CLK_CEP)
+                                                     -0.218     4.790    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__5/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          4.790    
+                         arrival time                          -0.643    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__6/DSP_OUTPUT_INST/CEP
+                            (rising edge-triggered cell DSP_OUTPUT clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.615ns  (logic 0.240ns (39.024%)  route 0.375ns (60.976%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 5.043 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.130     0.235    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT5 (Prop_LUT5_I0_O)        0.163     0.398 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0_i_1/O
+                         net (fo=8, unplaced)         0.245     0.643    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__6/CEP
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__6/DSP_OUTPUT_INST/CEP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.043     5.043    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__6/CLK
+                         DSP_OUTPUT                                   r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__6/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.000     5.043    
+                         clock uncertainty           -0.035     5.008    
+                         DSP_OUTPUT (Setup_DSP_OUTPUT_CLK_CEP)
+                                                     -0.218     4.790    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/c_data_out0__6/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          4.790    
+                         arrival time                          -0.643    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.182ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[0]/CE
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.714ns  (logic 0.153ns (21.429%)  route 0.561ns (78.571%))
+  Logic Levels:           2  (LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.008ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.020ns = ( 5.020 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.171     0.276    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT2 (Prop_LUT2_I1_O)        0.038     0.314 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state[2]_i_2/O
+                         net (fo=2, unplaced)         0.197     0.511    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/grp_tensor_slice_wrapper_fu_44_ap_start
+                         LUT6 (Prop_LUT6_I2_O)        0.038     0.549 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state[2]_i_1/O
+                         net (fo=3, unplaced)         0.193     0.742    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state[2]_i_1_n_0
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.020     5.020    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/ap_clk
+                         FDRE                                         r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[0]/C
+                         clock pessimism              0.000     5.020    
+                         clock uncertainty           -0.035     4.985    
+                         FDRE (Setup_FDRE_C_CE)      -0.061     4.924    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[0]
+  -------------------------------------------------------------------
+                         required time                          4.924    
+                         arrival time                          -0.742    
+  -------------------------------------------------------------------
+                         slack                                  4.182    
+
+Slack (MET) :             4.182ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[1]/CE
+                            (rising edge-triggered cell FDSE clocked by ap_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (ap_clk rise@5.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.714ns  (logic 0.153ns (21.429%)  route 0.561ns (78.571%))
+  Logic Levels:           2  (LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.008ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.020ns = ( 5.020 - 5.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.028     0.028    bd_0_i/hls_inst/inst/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.105 r  bd_0_i/hls_inst/inst/ap_CS_fsm_reg[0]/Q
+                         net (fo=6, unplaced)         0.171     0.276    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/Q[0]
+                         LUT2 (Prop_LUT2_I1_O)        0.038     0.314 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state[2]_i_2/O
+                         net (fo=2, unplaced)         0.197     0.511    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/grp_tensor_slice_wrapper_fu_44_ap_start
+                         LUT6 (Prop_LUT6_I2_O)        0.038     0.549 r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state[2]_i_1/O
+                         net (fo=3, unplaced)         0.193     0.742    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state[2]_i_1_n_0
+                         FDSE                                         r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     5.000     5.000 r  
+                                                      0.000     5.000 r  ap_clk (IN)
+                         net (fo=183, unset)          0.020     5.020    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/ap_clk
+                         FDSE                                         r  bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[1]/C
+                         clock pessimism              0.000     5.020    
+                         clock uncertainty           -0.035     4.985    
+                         FDSE (Setup_FDSE_C_CE)      -0.061     4.924    bd_0_i/hls_inst/inst/grp_tensor_slice_wrapper_fu_44/FSM_onehot_state_reg[1]
+  -------------------------------------------------------------------
+                         required time                          4.924    
+                         arrival time                          -0.742    
+  -------------------------------------------------------------------
+                         slack                                  4.182    
+
+
+
+

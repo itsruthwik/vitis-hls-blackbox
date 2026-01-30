@@ -1,16 +1,4 @@
 {
-    "1": {
-        "name": "tensor_slice_wrapper",
-        "file": "tensor_slice_test.cpp",
-        "fileloc": "0",
-        "instructions": "9",
-        "total_instructions": "9",
-        "calls": "",
-        "basicblocks": "1",
-        "stores": {
-            "L": "2"
-        }
-    },
     "0": {
         "name": "tensor_slice_test",
         "file": "tensor_slice_test.cpp",
@@ -21,6 +9,18 @@
         "basicblocks": "1",
         "loads": {
             "L": "1"
+        }
+    },
+    "1": {
+        "name": "tensor_slice_wrapper",
+        "file": "tensor_slice_test.cpp",
+        "fileloc": "0",
+        "instructions": "9",
+        "total_instructions": "9",
+        "calls": "",
+        "basicblocks": "1",
+        "stores": {
+            "L": "2"
         }
     }
 }
