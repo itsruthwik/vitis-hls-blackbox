@@ -1,0 +1,32 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "tensor_slice_test_fp16.cpp",
+    "fileloc": 18,
+    "instructions": 8,
+    "loads": {
+      "L": 1
+    },
+    "name": "tensor_slice_test_fp16",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 641
+  },
+  "1": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "tensor_slice_wrapper_fp16.cpp",
+    "fileloc": 7,
+    "instructions": 148,
+    "loads": {
+      "L": 2
+    },
+    "name": "tensor_slice_wrapper_fp16",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 633
+  }
+}

@@ -1,0 +1,12 @@
+set clock_constraint { \
+    name clk \
+    module tensor_slice_test_fp16 \
+    port ap_clk \
+    period 5 \
+    uncertainty 1.35 \
+}
+
+set all_path {}
+
+set false_path {}
+

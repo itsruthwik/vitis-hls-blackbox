@@ -1,0 +1,1006 @@
+INFO: [vitis-run 82-31] Launching vitis_hls: vitis_hls -nolog -run tcl -f /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/run_hls.tcl -work_dir /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.1 (64-bit)
+  **** SW Build 5069499 on May 21 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Fri Jan 30 17:15:00 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /opt/AMD/Vitis_HLS/2024.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'jchoudh3' on host 'en4234856l' (Linux_x86_64 version 6.14.0-37-generic) on Fri Jan 30 17:15:01 UTC 2026
+INFO: [HLS 200-10] On os Ubuntu 24.04.3 LTS
+INFO: [HLS 200-10] In directory '/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16'
+Sourcing Tcl script '/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset proj_tensor_slice_test_fp16 
+INFO: [HLS 200-10] Opening and resetting project '/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16'.
+INFO: [HLS 200-1510] Running: add_files tensor_slice_test_fp16.cpp 
+INFO: [HLS 200-10] Adding design file 'tensor_slice_test_fp16.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files tensor_slice_test_fp16.h 
+INFO: [HLS 200-10] Adding design file 'tensor_slice_test_fp16.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tensor_slice_test_fp16_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'tensor_slice_test_fp16_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb result.golden.dat 
+INFO: [HLS 200-10] Adding test bench file 'result.golden.dat' to the project
+INFO: [HLS 200-1510] Running: add_files -blackbox tensor_slice_wrapper_fp16.json 
+INFO: [HLS 200-10] Adding black box file 'tensor_slice_wrapper_fp16.json' to the project
+INFO: [HLS 200-1510] Running: set_top tensor_slice_test_fp16 
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 200MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../tensor_slice_test_fp16_tb.cpp in debug mode
+../../../../tensor_slice_test_fp16_tb.cpp:36:9: error: expected ';' after expression
+    FILE hex << c_result << dec << endl;
+        ^
+        ;
+../../../../tensor_slice_test_fp16_tb.cpp:36:14: error: invalid operands to binary expression ('std::ios_base &(std::ios_base &)' and 'result_data_t' (aka 'ap_uint<256>'))
+    FILE hex << c_result << dec << endl;
+         ~~~ ^  ~~~~~~~~
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1457:30: note: candidate function template not viable: no known conversion from 'std::ios_base &(std::ios_base &)' to 'std::ostream &' (aka 'basic_ostream<char> &') for 1st argument
+INLINE NODEBUG std::ostream& operator<<(std::ostream& os,
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/gmp.h:2406:33: note: candidate function not viable: no known conversion from 'std::ios_base &(std::ios_base &)' to 'std::ostream &' (aka 'basic_ostream<char> &') for 1st argument
+__GMP_DECLSPEC_XX std::ostream& operator<< (std::ostream &, mpz_srcptr);
+                                ^
+/opt/AMD/Vitis_HLS/2024.1/include/gmp.h:2407:33: note: candidate function not viable: no known conversion from 'std::ios_base &(std::ios_base &)' to 'std::ostream &' (aka 'basic_ostream<char> &') for 1st argument
+__GMP_DECLSPEC_XX std::ostream& operator<< (std::ostream &, mpq_srcptr);
+                                ^
+/opt/AMD/Vitis_HLS/2024.1/include/gmp.h:2408:33: note: candidate function not viable: no known conversion from 'std::ios_base &(std::ios_base &)' to 'std::ostream &' (aka 'basic_ostream<char> &') for 1st argument
+__GMP_DECLSPEC_XX std::ostream& operator<< (std::ostream &, mpf_srcptr);
+                                ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/bits/basic_string.h:6323:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os,
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/system_error:217:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:497:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:502:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:508:5: note: candidate template ignored: could not match 'basic_ostream<char, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<char, _Traits>& __out, char __c)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:514:5: note: candidate template ignored: could not match 'basic_ostream<char, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:519:5: note: candidate template ignored: could not match 'basic_ostream<char, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:539:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:556:5: note: candidate template ignored: could not match 'basic_ostream<char, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:569:5: note: candidate template ignored: could not match 'basic_ostream<char, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:574:5: note: candidate template ignored: could not match 'basic_ostream<char, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip:79:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip:109:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip:143:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip:178:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip:208:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip:238:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip:311:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip:363:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:6138:15: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+std::ostream &operator<<(std::ostream &os, const ap_private<_AP_W, _AP_S> &x) {
+              ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7180:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(bool, 1, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7180:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7181:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(char, 8, CHAR_IS_SIGNED)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7181:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7182:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(signed char, 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7182:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7183:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(unsigned char, 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7183:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7184:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(short, sizeof(short) * 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7184:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7185:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(unsigned short, sizeof(unsigned short) * 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7185:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7186:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(int, sizeof(int) * 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7186:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7187:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(unsigned int, sizeof(unsigned int) * 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7187:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7188:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(long, sizeof(long) * 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7188:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7189:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(unsigned long, sizeof(unsigned long) * 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7189:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7190:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(ap_slong, sizeof(ap_slong) * 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7190:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7191:1: note: candidate template ignored: could not match 'ap_private' against 'ap_uint'
+OPS_MIX_INT(ap_ulong, sizeof(ap_ulong) * 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7123:30: note: expanded from macro 'OP_BIN_SHIFT_INT'
+  HLS_CONSTEXPR_EXTRA C_TYPE operator BIN_OP(C_TYPE i_op,                                          \
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7191:1: note: candidate template ignored: could not match 'ap_private<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7160:3: note: expanded from macro 'OPS_MIX_INT'
+  OP_BIN_SHIFT_INT(<<, C_TYPE, (_AP_W2), (_AP_S2), arg1) \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7130:7: note: expanded from macro 'OP_BIN_SHIFT_INT'
+      operator BIN_OP(const ap_private<_AP_W, _AP_S>& op, C_TYPE i_op) {       \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7255:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W1, _AP_S1>' against 'std::ios_base &(std::ios_base &)'
+OP_BIN_MIX_RANGE(<<, arg1)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7205:3: note: expanded from macro 'OP_BIN_MIX_RANGE'
+  operator BIN_OP(const _private_range_ref<_AP_W1, _AP_S1>& op1,            \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7255:1: note: candidate template ignored: could not match 'ap_private<_AP_W1, _AP_S1>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7212:3: note: expanded from macro 'OP_BIN_MIX_RANGE'
+  operator BIN_OP(const ap_private<_AP_W1, _AP_S1>& op1,                    \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7342:1: note: candidate template ignored: could not match '_private_bit_ref<_AP_W1, _AP_S1>' against 'std::ios_base &(std::ios_base &)'
+OP_BIN_MIX_BIT(<<, arg1)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7281:3: note: expanded from macro 'OP_BIN_MIX_BIT'
+  operator BIN_OP(const _private_bit_ref<_AP_W1, _AP_S1>& op1,                \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7342:1: note: candidate template ignored: could not match 'ap_private<_AP_W1, _AP_S1>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7287:3: note: expanded from macro 'OP_BIN_MIX_BIT'
+  operator BIN_OP(const ap_private<_AP_W1, _AP_S1>& op1,                      \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7432:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(bool, 1, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7432:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7433:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(char, 8, CHAR_IS_SIGNED)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7433:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7434:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(signed char, 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7434:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7435:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(unsigned char, 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7435:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7436:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(short, sizeof(short) * 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7436:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7437:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(unsigned short, sizeof(unsigned short) * 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7437:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7438:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(int, sizeof(int) * 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7438:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7439:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(unsigned int, sizeof(unsigned int) * 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7439:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7440:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(long, sizeof(long) * 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7440:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/ostream:682:5: note: candidate template ignored: requirement '__and_<std::__not_<std::is_lvalue_reference<std::ios_base &(&)(std::ios_base &)>>, std::__is_convertible_to_basic_ostream<std::ios_base &(&)(std::ios_base &)>, std::__is_insertable<void, const ap_uint<256> &, void>>::value' was not satisfied [with _Ostream = std::ios_base &(&)(std::ios_base &), _Tp = ap_uint<256>]
+    operator<<(_Ostream&& __os, const _Tp& __x)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/bits/ostream.tcc:321:5: note: candidate template ignored: could not match 'basic_ostream<_CharT, _Traits>' against 'std::ios_base &(std::ios_base &)'
+    operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+    ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7441:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(unsigned long, sizeof(unsigned long) * 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7441:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7442:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(ap_slong, sizeof(ap_slong) * 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7442:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7443:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_MIX_INT(ap_ulong, sizeof(ap_ulong) * 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7405:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& op,              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7443:1: note: candidate template ignored: could not match '_private_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7430:3: note: expanded from macro 'REF_BIN_MIX_INT'
+  REF_BIN_OP_MIX_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7414:7: note: expanded from macro 'REF_BIN_OP_MIX_INT'
+      operator BIN_OP(C_TYPE op2,                                              \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7466:1: note: candidate template ignored: could not match '_private_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP(<<, arg1)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_private.h:7451:7: note: expanded from macro 'REF_BIN_OP'
+      operator BIN_OP(const _private_range_ref<_AP_W, _AP_S>& lhs,            \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1678:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(char, 8, CHAR_IS_SIGNED)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1658:110: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1679:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(signed char, 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1658:110: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1680:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(short, _AP_SIZE_short, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1658:110: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1681:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(int, _AP_SIZE_int, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1658:110: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1682:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(long, _AP_SIZE_long, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1658:110: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1683:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(ap_slong, _AP_SIZE_ap_slong, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1658:110: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1702:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(bool, 1, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1689:102: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                     ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1703:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(unsigned char, 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1689:102: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                     ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1704:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(unsigned short, _AP_SIZE_short, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1689:102: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                     ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1705:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(unsigned int, _AP_SIZE_int, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1689:102: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                     ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1706:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(unsigned long, _AP_SIZE_long, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1689:102: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                     ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1707:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+ALL_OP_SHIFT_WITH_INT(ap_ulong, _AP_SIZE_ap_slong, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1689:102: note: expanded from macro 'ALL_OP_SHIFT_WITH_INT'
+  HLS_CONSTEXPR INLINE NODEBUG typename ap_int_base<_AP_W, _AP_S>::template RType<_AP_W,_AP_S>::arg1 operator<<(           \
+                                                                                                     ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1870:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W1, _AP_S1>' against 'std::ios_base &(std::ios_base &)'
+OP_BIN_WITH_RANGE(<<, arg1)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1849:3: note: expanded from macro 'OP_BIN_WITH_RANGE'
+  operator BIN_OP(const ap_range_ref<_AP_W1, _AP_S1>& op1,                   \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1870:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W1, _AP_S1>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1856:3: note: expanded from macro 'OP_BIN_WITH_RANGE'
+  operator BIN_OP(const ap_int_base<_AP_W1, _AP_S1>& op1,                    \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1979:1: note: candidate template ignored: could not match 'ap_int_base<_AP_W1, _AP_S1>' against 'std::ios_base &(std::ios_base &)'
+OP_BIN_WITH_BIT(<<, arg1)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1959:3: note: expanded from macro 'OP_BIN_WITH_BIT'
+  operator BIN_OP(const ap_int_base<_AP_W1, _AP_S1>& op1,                      \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1979:1: note: candidate template ignored: could not match 'ap_bit_ref<_AP_W1, _AP_S1>' against 'std::ios_base &(std::ios_base &)'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_base.h:1965:3: note: expanded from macro 'OP_BIN_WITH_BIT'
+  operator BIN_OP(const ap_bit_ref<_AP_W1, _AP_S1>& op1,                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:731:30: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+INLINE NODEBUG std::ostream& operator<<(std::ostream& os,
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1118:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(bool, 1, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1118:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1119:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(char, 8, CHAR_IS_SIGNED)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1119:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1120:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(signed char, 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1120:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1121:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(unsigned char, 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1121:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1122:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(short, _AP_SIZE_short, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1122:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1123:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(unsigned short, _AP_SIZE_short, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1123:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1124:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(int, _AP_SIZE_int, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1124:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1125:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(unsigned int, _AP_SIZE_int, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1125:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1126:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(long, _AP_SIZE_long, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1126:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1127:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(unsigned long, _AP_SIZE_long, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1127:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1128:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(ap_slong, _AP_SIZE_ap_slong, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1128:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1129:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP_WITH_INT_BITS(ap_ulong, _AP_SIZE_ap_slong, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1075:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& op, C_TYPE op2) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1129:1: note: candidate template ignored: could not match 'ap_range_ref' against 'ap_uint'
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1116:3: note: expanded from macro 'REF_BIN_OP_WITH_INT_BITS'
+  REF_BIN_OP_WITH_INT(<<, arg1, C_TYPE, (_AP_W2), (_AP_S2))
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1082:3: note: expanded from macro 'REF_BIN_OP_WITH_INT'
+  operator BIN_OP(C_TYPE op2, const ap_range_ref<_AP_W, _AP_S>& op) {       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1155:1: note: candidate template ignored: could not match 'ap_range_ref<_AP_W, _AP_S>' against 'std::ios_base &(std::ios_base &)'
+REF_BIN_OP(<<, arg1)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1140:7: note: expanded from macro 'REF_BIN_OP'
+      operator BIN_OP(const ap_range_ref<_AP_W, _AP_S>& lhs,                   \
+      ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1204:1: note: candidate template ignored: could not match 'ap_concat_ref<_AP_LW1, _AP_LT1, _AP_LW2, _AP_LT2>' against 'std::ios_base &(std::ios_base &)'
+SYN_CONCAT_REF_BIN_OP(<<, arg1)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1189:3: note: expanded from macro 'SYN_CONCAT_REF_BIN_OP'
+  operator BIN_OP(                                                        \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1366:1: note: candidate template ignored: could not match 'ap_concat_ref<_AP_W, _AP_T, _AP_W1, _AP_T1>' against 'std::ios_base &(*)(std::ios_base &)'
+CONCAT_SHIFT_WITH_INT(int, <<)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1359:42: note: expanded from macro 'CONCAT_SHIFT_WITH_INT'
+  INLINE NODEBUG ap_uint<_AP_W + _AP_W1> operator OP(                              \
+                                         ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1367:1: note: candidate template ignored: could not match 'ap_concat_ref<_AP_W, _AP_T, _AP_W1, _AP_T1>' against 'std::ios_base &(*)(std::ios_base &)'
+CONCAT_SHIFT_WITH_INT(unsigned int, <<)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1359:42: note: expanded from macro 'CONCAT_SHIFT_WITH_INT'
+  INLINE NODEBUG ap_uint<_AP_W + _AP_W1> operator OP(                              \
+                                         ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1368:1: note: candidate template ignored: could not match 'ap_concat_ref<_AP_W, _AP_T, _AP_W1, _AP_T1>' against 'std::ios_base &(*)(std::ios_base &)'
+CONCAT_SHIFT_WITH_INT(long, <<)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1359:42: note: expanded from macro 'CONCAT_SHIFT_WITH_INT'
+  INLINE NODEBUG ap_uint<_AP_W + _AP_W1> operator OP(                              \
+                                         ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1369:1: note: candidate template ignored: could not match 'ap_concat_ref<_AP_W, _AP_T, _AP_W1, _AP_T1>' against 'std::ios_base &(*)(std::ios_base &)'
+CONCAT_SHIFT_WITH_INT(unsigned long, <<)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1359:42: note: expanded from macro 'CONCAT_SHIFT_WITH_INT'
+  INLINE NODEBUG ap_uint<_AP_W + _AP_W1> operator OP(                              \
+                                         ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1370:1: note: candidate template ignored: could not match 'ap_concat_ref<_AP_W, _AP_T, _AP_W1, _AP_T1>' against 'std::ios_base &(*)(std::ios_base &)'
+CONCAT_SHIFT_WITH_INT(ap_slong, <<)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1359:42: note: expanded from macro 'CONCAT_SHIFT_WITH_INT'
+  INLINE NODEBUG ap_uint<_AP_W + _AP_W1> operator OP(                              \
+                                         ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1371:1: note: candidate template ignored: could not match 'ap_concat_ref<_AP_W, _AP_T, _AP_W1, _AP_T1>' against 'std::ios_base &(*)(std::ios_base &)'
+CONCAT_SHIFT_WITH_INT(ap_ulong, <<)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_int_ref.h:1359:42: note: expanded from macro 'CONCAT_SHIFT_WITH_INT'
+  INLINE NODEBUG ap_uint<_AP_W + _AP_W1> operator OP(                              \
+                                         ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2241:22: note: candidate template ignored: could not match 'ap_fixed_base' against 'ap_uint'
+INLINE std::ostream& operator<<(
+                     ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2372:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(bool, 1, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2373:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(char, 8, CHAR_IS_SIGNED)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2374:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(signed char, 8, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2375:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(unsigned char, 8, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2376:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(short, _AP_SIZE_short, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2377:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(unsigned short, _AP_SIZE_short, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2378:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(int, _AP_SIZE_int, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2379:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(unsigned int, _AP_SIZE_int, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2380:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(long, _AP_SIZE_long, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2381:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(unsigned long, _AP_SIZE_long, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2382:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(ap_slong, _AP_SIZE_ap_slong, true)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2383:1: note: candidate template ignored: could not match 'ap_fixed_base<_AP_W, _AP_I, _AP_S, _AP_Q, _AP_O, _AP_N>' against 'std::ios_base &(std::ios_base &)'
+ALL_AF_OP_WITH_INT(ap_ulong, _AP_SIZE_ap_slong, false)
+^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2353:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT_SF(<<, C_TYPE, (BITS), (SIGN), lhs)  \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_base.h:2282:3: note: expanded from macro 'AF_BIN_OP_WITH_INT_SF'
+  operator BIN_OP(                                                       \
+  ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_ref.h:202:30: note: candidate template ignored: could not match 'af_bit_ref' against 'ap_uint'
+INLINE NODEBUG std::ostream& operator<<(
+                             ^
+/opt/AMD/Vitis_HLS/2024.1/include/etc/ap_fixed_ref.h:627:30: note: candidate template ignored: could not match 'af_range_ref' against 'ap_uint'
+INLINE NODEBUG std::ostream& operator<<(
+                             ^
+../../../../tensor_slice_test_fp16_tb.cpp:36:5: warning: expression result unused [-Wunused-value]
+    FILE hex << c_result << dec << endl;
+    ^~~~
+1 warning and 2 errors generated.
+make: *** [csim.mk:88: obj/tensor_slice_test_fp16_tb.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:01; Allocated memory: 0.000 MB.
+4
+    while executing
+"source /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/run_hls.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $tclfile] "
+
+INFO: [HLS 200-112] Total CPU user time: 2.63 seconds. Total CPU system time: 0.45 seconds. Total elapsed time: 2.91 seconds; peak allocated memory: 333.324 MB.
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

@@ -1,0 +1,37 @@
+INFO: [vitis-run 82-31] Launching vitis_hls: vitis_hls -nolog -run tcl -f /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/run_hls.tcl -work_dir /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.1 (64-bit)
+  **** SW Build 5069499 on May 21 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Fri Jan 30 17:06:04 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /opt/AMD/Vitis_HLS/2024.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'jchoudh3' on host 'en4234856l' (Linux_x86_64 version 6.14.0-37-generic) on Fri Jan 30 17:06:05 UTC 2026
+INFO: [HLS 200-10] On os Ubuntu 24.04.3 LTS
+INFO: [HLS 200-10] In directory '/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16'
+Sourcing Tcl script '/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset proj_tensor_slice_test_fp16 
+INFO: [HLS 200-10] Creating and opening project '/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16'.
+INFO: [HLS 200-1510] Running: add_files tensor_slice_test_fp16.cpp 
+INFO: [HLS 200-10] Adding design file 'tensor_slice_test_fp16.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files tensor_slice_test_fp16.h 
+INFO: [HLS 200-10] Adding design file 'tensor_slice_test_fp16.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tensor_slice_test_fp16_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'tensor_slice_test_fp16_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb result.golden.dat 
+INFO: [HLS 200-10] Adding test bench file 'result.golden.dat' to the project
+INFO: [HLS 200-1510] Running: add_files -blackbox tensor_slice_wrapper_fp16.json 
+INFO: [HLS 200-10] Adding black box file 'tensor_slice_wrapper_fp16.json' to the project
+ERROR: [HLS 200-646] The file 'tensor_slice_fp16.v' in blackbox json file 'tensor_slice_wrapper_fp16.json' does not exist
+Blackbox JSON RTL file not found: tensor_slice_fp16.v
+    while executing
+"source /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/run_hls.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $tclfile] "
+
+INFO: [HLS 200-112] Total CPU user time: 1.24 seconds. Total CPU system time: 0.09 seconds. Total elapsed time: 1.16 seconds; peak allocated memory: 97.609 MB.
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

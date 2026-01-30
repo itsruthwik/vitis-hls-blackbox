@@ -1,0 +1,76 @@
+---
+MainSourceFile:  /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1223_1:  '
+    FileOffset:      1223
+    FilePath:        /opt/AMD/Vitis_HLS/2024.1/common/technology/autopilot/etc/ap_int_base.h
+    Replacements:    
+      - FilePath:        /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+        Offset:          55093
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1223_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        /opt/AMD/Vitis_HLS/2024.1/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+        Offset:          282403
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        /opt/AMD/Vitis_HLS/2024.1/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+        Offset:          282867
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        /opt/AMD/Vitis_HLS/2024.1/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+        Offset:          283332
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1247_1:  '
+    FileOffset:      1247
+    FilePath:        /opt/AMD/Vitis_HLS/2024.1/common/technology/autopilot/etc/ap_fixed_base.h
+    Replacements:    
+      - FilePath:        /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+        Offset:          566582
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1247_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_20_1:  '
+    FileOffset:      20
+    FilePath:        tensor_slice_wrapper_fp16.cpp
+    Replacements:    
+      - FilePath:        /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+        Offset:          1758657
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_20_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_31_2:  '
+    FileOffset:      31
+    FilePath:        tensor_slice_wrapper_fp16.cpp
+    Replacements:    
+      - FilePath:        /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+        Offset:          1758899
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_31_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_37_3:  '
+    FileOffset:      37
+    FilePath:        tensor_slice_wrapper_fp16.cpp
+    Replacements:    
+      - FilePath:        /mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_wrapper_fp16.pp.0.cpp
+        Offset:          1759003
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_37_3: '
+...

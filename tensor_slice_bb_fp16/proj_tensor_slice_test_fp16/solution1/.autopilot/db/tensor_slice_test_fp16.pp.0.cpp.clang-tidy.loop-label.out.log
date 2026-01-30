@@ -1,0 +1,25 @@
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:31996:7: warning: Added loop label VITIS_LOOP_1223_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1223_1: 
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:31996:7: note: FIX-IT applied suggested code changes
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:32970:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:32970:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:32984:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:32984:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:32998:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:32998:5: note: FIX-IT applied suggested code changes
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:34627:7: warning: Added loop label VITIS_LOOP_1247_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1247_1: 
+/mnt/vault0/jchoudh3/custom-blackbox/vitis-hls-blackbox/tensor_slice_bb_fp16/proj_tensor_slice_test_fp16/solution1/.autopilot/db/tensor_slice_test_fp16.pp.0.cpp:34627:7: note: FIX-IT applied suggested code changes

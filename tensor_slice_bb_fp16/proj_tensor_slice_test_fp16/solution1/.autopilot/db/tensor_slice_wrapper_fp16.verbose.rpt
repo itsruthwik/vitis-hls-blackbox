@@ -1,0 +1,249 @@
+
+
+================================================================
+== Vitis HLS Report for 'tensor_slice_wrapper_fp16'
+================================================================
+* Date:           Fri Jan 30 17:22:45 2026
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        proj_tensor_slice_test_fp16
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|      0 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min    |    max    | min | max |   Type   |
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |        2|        2|  10.000 ns|  10.000 ns|    1|    1|  yes(flp)|
+    +---------+---------+-----------+-----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        -|        -|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        0|     0|        0|        0|    0|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|        -|    -|
+|Register             |        -|     -|        -|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|        0|        0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|        0|        0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|        0|        0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+---------------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |       Source Object       |    C Type    |
++-------------------+-----+-----+------------+---------------------------+--------------+
+|ap_clk             |   in|    1|  ap_ctrl_hs|  tensor_slice_wrapper_fp16|  return value|
+|ap_rst             |   in|    1|  ap_ctrl_hs|  tensor_slice_wrapper_fp16|  return value|
+|ap_ce              |   in|    1|  ap_ctrl_hs|  tensor_slice_wrapper_fp16|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|  tensor_slice_wrapper_fp16|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|  tensor_slice_wrapper_fp16|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|  tensor_slice_wrapper_fp16|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|  tensor_slice_wrapper_fp16|  return value|
+|ap_continue        |   in|    1|  ap_ctrl_hs|  tensor_slice_wrapper_fp16|  return value|
+|a_data             |   in|  128|     ap_none|                     a_data|        scalar|
+|b_data             |   in|  128|     ap_none|                     b_data|        scalar|
+|c_data_out         |  out|  256|      ap_vld|                 c_data_out|       pointer|
+|c_data_out_ap_vld  |  out|    1|      ap_vld|                 c_data_out|       pointer|
++-------------------+-----+-----+------------+---------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 1
+HasImplIP: 1
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 0
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+
+* FSM state operations: 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 1
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ a_data]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ b_data]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ c_data_out]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=ap_vld:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="a_data">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="a_data"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="b_data">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="b_data"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="c_data_out">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="c_data_out"/></StgValue>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|----------------|
+| Operation| Functional Unit|
+|----------|----------------|
+|   Total  |                |
+|----------|----------------|
+
+Memories:
+N/A
+
+* Register list:
+N/A
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+
+|           |
++-----------+
+|  Function |
+|   Memory  |
+|Multiplexer|
+|  Register |
++-----------+
+|   Total   |
++-----------+
