@@ -1,0 +1,6 @@
+[submodule "vtr-verilog-to-routing"]
+	path = vtr-verilog-to-routing
+	url = git@github.com:verilog-to-routing/vtr-verilog-to-routing.git
+[submodule "verilog-axi"]
+	path = verilog-axi
+	url = git@github.com:alexforencich/verilog-axi.git
