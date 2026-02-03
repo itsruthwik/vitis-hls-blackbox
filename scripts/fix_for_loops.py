@@ -46,11 +46,11 @@ def fix_for_loops_in_function(content):
         if for_match:
             loop_var = for_match.group(1)
             bound_var = for_match.group(2)
-            print(f"DEBUG: Found for-loop: var={loop_var}, bound={bound_var}")
+            # print(f"DEBUG: Found for-loop: var={loop_var}, bound={bound_var}")
             
             # Check if bound is not a constant (not all caps or a number)
             if not (bound_var.isupper() or bound_var.isdigit()):
-                print(f"DEBUG: {bound_var} is not a constant, looking for replacement...")
+                # print(f"DEBUG: {bound_var} is not a constant, looking for replacement...")
                 # This is likely a variable bound that needs fixing
                 # Find the corresponding constant by looking backwards for localparam
                 # Common pattern: TOTAL_PADS is the constant, din/len/etc is the variable
@@ -58,31 +58,31 @@ def fix_for_loops_in_function(content):
                 # Look backwards to find relevant localparam
                 constant_candidate = None
                 for j in range(i-1, max(0, i-100), -1):
-                    print(f"DEBUG: Checking line {j}: {lines[j][:50]}...")
+                    # print(f"DEBUG: Checking line {j}: {lines[j][:50]}...")
                     # Look for localparam definitions - handle both single-line and multi-line
                     # Single line: localparam TOTAL_PADS = ...
                     # Multi-line: localparam\n    TOTAL_PADS = ...
                     param_match = re.search(r'localparam\s+(\w+)\s*=', lines[j])
                     if param_match:
                         param_name = param_match.group(1)
-                        print(f"DEBUG: Found localparam: {param_name}")
+                        # print(f"DEBUG: Found localparam: {param_name}")
                         # Heuristic: look for TOTAL_* or similar all-caps constants
                         if param_name.isupper() and 'TOTAL' in param_name:
                             constant_candidate = param_name
-                            print(f"DEBUG: Found constant candidate: {constant_candidate}")
+                            # print(f"DEBUG: Found constant candidate: {constant_candidate}")
                             break
                     # Also check if this line starts with a parameter name after localparam
                     elif re.search(r'^\s*(\w+)\s*=', lines[j]):
                         param_match = re.search(r'^\s*(\w+)\s*=', lines[j])
                         param_name = param_match.group(1)
-                        print(f"DEBUG: Found parameter definition: {param_name}")
+                        # print(f"DEBUG: Found parameter definition: {param_name}")
                         if param_name.isupper() and 'TOTAL' in param_name:
                             constant_candidate = param_name
-                            print(f"DEBUG: Found constant candidate: {constant_candidate}")
+                            # print(f"DEBUG: Found constant candidate: {constant_candidate}")
                             break
                 
                 if constant_candidate:
-                    print(f"DEBUG: Applying fix with constant: {constant_candidate}")
+                    # print(f"DEBUG: Applying fix with constant: {constant_candidate}")
                     # Get the indentation of the for-loop
                     indent_match = re.match(r'(\s*)', line)
                     indent = indent_match.group(1) if indent_match else ''
@@ -92,7 +92,7 @@ def fix_for_loops_in_function(content):
                     statement_match = re.search(r'for\s*\([^)]+\)\s*(.+)', line)
                     
                     if statement_match:
-                        print(f"DEBUG: Same-line statement found: {statement_match.group(1)}")
+                        # print(f"DEBUG: Same-line statement found: {statement_match.group(1)}")
                         # Statement is on the same line (function style)
                         statement = statement_match.group(1).strip()
                         
@@ -115,7 +115,7 @@ def fix_for_loops_in_function(content):
                         i += 1
                         continue
                     else:
-                        print(f"DEBUG: Multi-line statement, checking next line...")
+                        # print(f"DEBUG: Multi-line statement, checking next line...")
                         # Statement is on next line(s) - procedural style
                         # Replace the bound in the for-loop
                         new_for_line = re.sub(
@@ -138,8 +138,8 @@ def fix_for_loops_in_function(content):
                             i += 1
                             modified = True
                             continue
-                else:
-                    print(f"DEBUG: No constant candidate found for {bound_var}")
+                # else:
+                    # print(f"DEBUG: No constant candidate found for {bound_var}")
         
         result_lines.append(line)
         i += 1
@@ -158,13 +158,13 @@ def fix_file(filepath):
         if modified:
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(new_content)
-            print(f"✓ Fixed: {filepath}")
+            print(f"--- ✓ Fixed: {filepath}")
             return True
         else:
-            print(f"  No changes: {filepath}")
+            # print(f"---  No changes: {filepath}")
             return False
     except Exception as e:
-        print(f"✗ Error processing {filepath}: {e}")
+        print(f"--- ✗ Error processing {filepath}: {e}")
         return False
 
 
@@ -182,16 +182,16 @@ def main():
     elif os.path.isdir(target):
         # Directory - find all .v files
         verilog_files = list(Path(target).rglob('*.v'))
-        print(f"Found {len(verilog_files)} Verilog files")
+        print(f"    - Found {len(verilog_files)} Verilog files")
         
         fixed_count = 0
         for vfile in verilog_files:
             if fix_file(str(vfile)):
                 fixed_count += 1
         
-        print(f"\nSummary: Fixed {fixed_count} file(s)")
+        print(f"\n    - Summary: Fixed {fixed_count} file(s)")
     else:
-        print(f"Error: {target} is not a valid file or directory")
+        print(f"    - Error: {target} is not a valid file or directory")
         sys.exit(1)
 
 
