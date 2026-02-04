@@ -44,7 +44,7 @@ void behavioral_multiply_32x32(
     // Unpack B matrix (32x32 int8 values from array of 256-bit chunks)
     for(int i = 0; i < 32; i++) {
         for(int j = 0; j < 32; j++) {
-            b_mat[i][j] = b_data[i]((j+1)*8-1, j*8);
+            b_mat[i][j] = b_data[j]((i+1)*8-1, i*8);
             c_mat[i][j] = 0;
         }
     }

@@ -1,21 +1,21 @@
 /*
- * matrix_multiply_32x32_tb.cpp
- * Testbench for full 32x32 matrix multiplication using int8_32x32_wrapper blackbox
+ * matrix_multiply_64x64_tb.cpp
+ * Testbench for full 64x64 matrix multiplication using int8_64x64_wrapper blackbox
  */
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "matrix_multiply_32x32.h"
+#include "matrix_multiply_64x64.h"
 
 int main() {
     int retval = 0;
     FILE *outfile, *goldenfile;
     
     // Allocate matrices
-    ap_int<8> A[32][32];
-    ap_int<8> B[32][32];
-    ap_int<16> C[32][32];
-
+    ap_int<8> A[64][64];
+    ap_int<8> B[64][64];
+    ap_int<16> C[64][64];
+    
     // Open output file
     outfile = fopen("result.dat", "w");
     if (!outfile) {
@@ -23,13 +23,13 @@ int main() {
         return 1;
     }
     
-    // Test 1: 2 x [1 2 3 ... 32]
-    printf("Starting full 32x32 matrix multiplication tests...\n");
-    printf("Test 1: 32x32 matrix multiplication with all ones result:\n");
+    // Test 1: 2 x [1 2 3 .... 64]
+    printf("Starting full 64x64 matrix multiplication tests...\n");
+    printf("Test 1: 64x64 matrix multiplication with all ones result:\n");
     
     // Initialize matrices
-    for (int i = 0; i < 32; i++) {
-        for (int j = 0; j < 32; j++) {
+    for (int i = 0; i < 64; i++) {
+        for (int j = 0; j < 64; j++) {
             A[i][j] = 2;
             B[i][j] = j + 1;
             C[i][j] = 0;
@@ -37,17 +37,17 @@ int main() {
     }
     
     // Run the computation
-    matrix_multiply_32x32(A, B, C);
+    matrix_multiply_64x64(A, B, C);
     
-    // Expected result: each C[i][j] = 32 (sum of 32 ones)
-    for (int i = 0; i < 32; i++) {
+    // Expected result: each C[i][j] = 64 (sum of 64 ones)
+    for (int i = 0; i < 64; i++) {
         printf("Row %d:", i);
-        for (int j = 0; j < 32; j++) {
+        for (int j = 0; j < 64; j++) {
             printf(" 0x%04x", (unsigned short)C[i][j]);
-	    fprintf(outfile, "0x%04x\n", (unsigned short)C[i][j]);
-	    int expected = 64 * (j + 1);
+            fprintf(outfile, "0x%04x\n", (unsigned short)C[i][j]);
+	    int expected = 128 * (j + 1);
             if (C[i][j] != expected) {
-                printf(" (ERROR: expected 0x%04x)", expected);
+                printf(" (ERROR: expected %d)", expected);
                 retval = 1;
             }
         }
@@ -56,21 +56,21 @@ int main() {
     
     // Test 2: Zero matrix
     printf("\nTest 2: Zero matrix multiplication result:\n");
-    for (int i = 0; i < 32; i++) {
-        for (int j = 0; j < 32; j++) {
+    for (int i = 0; i < 64; i++) {
+        for (int j = 0; j < 64; j++) {
             A[i][j] = 0;
             B[i][j] = 0;
             C[i][j] = 0;
         }
     }
     
-    matrix_multiply_32x32(A, B, C);
+    matrix_multiply_64x64(A, B, C);
     
-    for (int i = 0; i < 32; i++) {
+    for (int i = 0; i < 64; i++) {
         printf("Row %d:", i);
-        for (int j = 0; j < 32; j++) {
+        for (int j = 0; j < 64; j++) {
             printf(" 0x%04x", (unsigned short)C[i][j]);
-	    fprintf(outfile, "0x%04x\n", (unsigned short)C[i][j]);
+            fprintf(outfile, "0x%04x\n", (unsigned short)C[i][j]);
             if (C[i][j] != 0) {
                 printf(" (ERROR: expected 0)");
                 retval = 1;
@@ -78,34 +78,34 @@ int main() {
         }
         printf("\n");
     }
-
+    
     fclose(outfile);
-
+    
     // Compare against golden reference if it exists
     goldenfile = fopen("result.golden.dat", "r");
     if (goldenfile) {
         printf("\nComparing against golden reference...\n");
         outfile = fopen("result.dat", "r");
-
+        
         char result_line[32], golden_line[32];
         int line_num = 0;
         int mismatch_count = 0;
-
-        while (fgets(result_line, sizeof(result_line), outfile) &&
+        
+        while (fgets(result_line, sizeof(result_line), outfile) && 
                fgets(golden_line, sizeof(golden_line), goldenfile)) {
             line_num++;
             if (strcmp(result_line, golden_line) != 0) {
                 if (mismatch_count < 10) {  // Only print first 10 mismatches
-                    printf("Line %d mismatch: got %s, expected %s",
+                    printf("Line %d mismatch: got %s, expected %s", 
                            line_num, result_line, golden_line);
                 }
                 mismatch_count++;
             }
         }
-
+        
         fclose(outfile);
         fclose(goldenfile);
-
+        
         if (mismatch_count > 0) {
             printf("FAILED: %d mismatches found\n", mismatch_count);
             retval = 1;

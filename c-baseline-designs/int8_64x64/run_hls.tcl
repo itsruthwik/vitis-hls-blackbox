@@ -1,15 +1,12 @@
-#
-# Vitis HLS synthesis script for int8_32x32 design (behavioral implementation)
-# Pre-configured with design-specific parameters
-#
-
-# Design parameters (pre-configured for int8_32x32)
+# Design parameters (pre-configured for int8_64x64)
 set design_dir [file normalize [info script]/..] 
-set design_name "matrix_multiply_32x32"
-set cpp_file "matrix_multiply_32x32.cpp"
-set tb_file "matrix_multiply_32x32_tb.cpp"
+set design_name "matrix_multiply_64x64"
+set cpp_file "matrix_multiply_64x64.cpp"
+set tb_file "matrix_multiply_64x64_tb.cpp"
 
-# Hardcoded settings
+# NEW: Add 32x32 implementation as library
+set lib_32x32 "../int8_32x32/matrix_multiply_32x32.cpp"
+
 set part "xc7a100t-csg324-1"
 set clock_period "200MHz"
 
@@ -19,21 +16,18 @@ puts "=========================================="
 puts "Design Dir:     $design_dir"
 puts "Design Name:    $design_name"
 puts "C++ File:       $cpp_file"
+puts "Library:        $lib_32x32"
 puts "TB File:        $tb_file"
-puts "Part:           $part"
-puts "Clock Period:   $clock_period"
 puts "=========================================="
 
-# Change to design directory
 cd $design_dir
 
-# Create a project
 open_project -reset ${design_name}_proj
 
-# Add design files
+# Add BOTH source files
 add_files $cpp_file
+add_files $lib_32x32
 
-# Add test bench
 add_files -tb $tb_file
 
 # Add golden reference if it exists
@@ -41,26 +35,20 @@ if {[file exists "result.golden.dat"]} {
     add_files -tb result.golden.dat
 }
 
-# No blackbox for behavioral implementation
-
-# Set the top-level function
 set_top $design_name
 
-# Create a solution
-open_solution -reset ${design_name}_solution
+set_top $design_name
 
-# Define technology and clock rate
+open_solution -reset ${design_name}_solution
 set_part $part
 create_clock -period "$clock_period"
 
-# Run simulation and synthesis
 puts "\nRunning C simulation..."
 csim_design
 
 puts "\nRunning C synthesis..."
 csynth_design
 
-# Export RTL Verilog
 puts "\nExporting Verilog RTL..."
 export_design -rtl verilog
 
