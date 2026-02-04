@@ -52,7 +52,7 @@ void int8_32x32_wrapper(
 #pragma HLS pipeline II=2
         for(int j = 0; j < 32; j++) {
 #pragma HLS unroll factor=4
-            b_mat[i][j] = b_data[i]((j+1)*8-1, j*8);
+            b_mat[i][j] = b_data[j]((i+1)*8-1, i*8);
             c_mat[i][j] = 0;
         }
     }
