@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<technology>
+  <library>
+    <name>mlp_lib</name>
+    <cell>
+      <name>mlp_wrapper_lo</name>
+      <operation operation_name="mlp_wrapper_lo" bounded="0" />
+      <circuit>
+        <component_o id="mlp_wrapper_lo">
+          <description>MLP wrapper - lower 64 bits of output</description>
+          <copyright>foo</copyright>
+          <authors>foo</authors>
+          <license>foo</license>
+          <structural_type_descriptor id_type="mlp_wrapper_lo" />
+          <port_o id="clock" dir="IN" is_clock="1">
+            <structural_type_descriptor type="BOOL" size="1" />
+          </port_o>
+          <port_o id="reset" dir="IN">
+            <structural_type_descriptor type="BOOL" size="1" />
+          </port_o>
+          <port_o id="start_port" dir="IN">
+            <structural_type_descriptor type="BOOL" size="1" />
+          </port_o>
+          <port_o id="in_port_in_data" dir="IN">
+            <structural_type_descriptor type="UINT" size="64" />
+          </port_o>
+          <port_o id="done_port" dir="OUT">
+            <structural_type_descriptor type="BOOL" size="1" />
+          </port_o>
+          <port_o id="return_port" dir="OUT">
+            <structural_type_descriptor type="UINT" size="64" />
+          </port_o>
+          <NP_functionality LIBRARY="mlp_wrapper_lo" VERILOG_FILE_PROVIDED="mlp_wrapper.v" />
+        </component_o>
+      </circuit>
+    </cell>
+    <cell>
+      <name>mlp_wrapper_hi</name>
+      <operation operation_name="mlp_wrapper_hi" bounded="0" />
+      <circuit>
+        <component_o id="mlp_wrapper_hi">
+          <description>MLP wrapper - upper 64 bits of output</description>
+          <copyright>foo</copyright>
+          <authors>foo</authors>
+          <license>foo</license>
+          <structural_type_descriptor id_type="mlp_wrapper_hi" />
+          <port_o id="clock" dir="IN" is_clock="1">
+            <structural_type_descriptor type="BOOL" size="1" />
+          </port_o>
+          <port_o id="reset" dir="IN">
+            <structural_type_descriptor type="BOOL" size="1" />
+          </port_o>
+          <port_o id="start_port" dir="IN">
+            <structural_type_descriptor type="BOOL" size="1" />
+          </port_o>
+          <port_o id="in_port_in_data" dir="IN">
+            <structural_type_descriptor type="UINT" size="64" />
+          </port_o>
+          <port_o id="done_port" dir="OUT">
+            <structural_type_descriptor type="BOOL" size="1" />
+          </port_o>
+          <port_o id="return_port" dir="OUT">
+            <structural_type_descriptor type="UINT" size="64" />
+          </port_o>
+          <NP_functionality LIBRARY="mlp_wrapper_hi" VERILOG_FILE_PROVIDED="mlp_wrapper.v" />
+        </component_o>
+      </circuit>
+    </cell>
+  </library>
+</technology>

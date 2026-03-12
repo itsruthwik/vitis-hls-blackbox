@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<function name="run_mlp_hi">
+
+  <!-- Test 1: x=[1,2,3,4,5,6,7,8] -> each INT16 = 36 = 0x0024 -->
+  <testbench in_data="578437695752307201" return="10133253782765604" />
+
+  <!-- Test 2: x=[1,1,1,1,1,1,1,1] -> each INT16 = 8 = 0x0008 -->
+  <testbench in_data="72340172838076673" return="2251834173947912" />
+
+  <!-- Test 3: x=[0,0,0,0,0,0,0,0] -> all zeros -->
+  <testbench in_data="0" return="0" />
+
+</function>
